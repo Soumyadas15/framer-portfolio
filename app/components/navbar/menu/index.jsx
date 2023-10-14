@@ -5,7 +5,7 @@ import styles from './style.module.scss';
 import Magnetic from '../magnetic';
 import { useScrollPosition } from '../../../hooks/useScrollPosition';
 
-const Menu = forwardRef(function index(props, ref) {
+const Menu = forwardRef(function Index(props, ref) {
   const scrollPosition = useScrollPosition();
   const [isScrollGreaterThan1800, setIsScrollGreaterThan1800] = useState(false);
 
