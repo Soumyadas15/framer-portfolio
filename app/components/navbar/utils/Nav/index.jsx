@@ -21,7 +21,7 @@ export default function index() {
                           exit="exit"
                         >
                             <a>
-                                {title}
+                                <div className='hover:text-white transition duration-200 ease-in cursor-pointer hover:scale-105'>{title}</div>
                             </a>
                         </motion.div>
                     </div>

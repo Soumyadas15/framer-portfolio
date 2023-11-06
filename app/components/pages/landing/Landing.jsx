@@ -5,6 +5,7 @@ import Container from "../../Container";
 import TextSpan from '../../reusable/TextSpan'
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import Button from '../../reusable/Button'
 
 const translate = {
     initial: {
@@ -147,24 +148,27 @@ const Landing = ({
                         )}
 
                         {isVisible && (
-                            <div className="md:mr-20 flex flex-col items-center mt-10 md:items-end z-10">
-                                <motion.div variants={translateStatic} initial='initial' animate='enter' exit='exit'>
-                                    <div className="overflow-hidden">
-                                        I am an interactive designer based
-                                    </div>
-                                </motion.div>
-                                <motion.div variants={translateStatic} initial='initial' animate='enter' exit='exit'>
-                                    <div className="overflow-hidden">
-                                        in India. I make engaging experiences
-                                    </div> 
-                                </motion.div>
-                                <motion.div variants={translateStatic} initial='initial' animate='enter' exit='exit'>
-                                    <div className="overflow-hidden">
-                                        for the web.
-                                    </div>
-                                </motion.div>
+                            <div className="flex flex-col">
+                                <div className="md:mr-20 flex flex-col items-center mt-10 md:items-end z-10">
+                                    <motion.div variants={translateStatic} initial='initial' animate='enter' exit='exit'>
+                                        <div className="overflow-hidden">
+                                            I am an interactive designer based
+                                        </div>
+                                    </motion.div>
+                                    <motion.div variants={translateStatic} initial='initial' animate='enter' exit='exit'>
+                                        <div className="overflow-hidden">
+                                            in India. I make engaging experiences
+                                        </div> 
+                                    </motion.div>
+                                    <motion.div variants={translateStatic} initial='initial' animate='enter' exit='exit'>
+                                        <div className="overflow-hidden">
+                                            for the web.
+                                        </div>
+                                    </motion.div>
+                                </div>
                                 
                             </div>
+                            
                         )}
                         
                         
