@@ -4,8 +4,8 @@ import { useRef } from "react";
 import { useScrollPosition } from "../../hooks/useScrollPosition";
 import { merge } from "../../utils/merger"
 import Container from '../Container'
-import Menu from './menu'
-import Cursor from './cursor'
+// import Button from "./utils/Button";
+import NavMenu from './utils/NavMenu'
 
 const Navbar = () => {
     const scrollPosition = useScrollPosition();
@@ -13,9 +13,10 @@ const Navbar = () => {
 
     let color = "text-black";
 
-    if (scrollPosition >= 600 && scrollPosition < 1100) {
+    if (scrollPosition >= 600 && scrollPosition < 2000) {
         color = "text-white";
     } 
+    
 
     return ( 
         <div className={`
@@ -52,14 +53,14 @@ const Navbar = () => {
                         <div className={merge(
                             scrollPosition > 1800 ? 'text-black' : 'text-[#ff2257]',
                             
-                            'text-xl font-semibold transition duration-200 ease-in ml-10'
+                            'text-xl font-semibold transition duration-200 ease-in ml-10 mt-6'
                         )}>
                             
                             Soumya
                         </div>
                         <div className="mr-10">
                             <div className="flex gap-10">
-                                <div className={`${color}`}>
+                                {/* <div className={`${color}`}>
                                     Home
                                 </div>
                                 <div className={`${color}`}>
@@ -67,11 +68,12 @@ const Navbar = () => {
                                 </div>
                                 <div className={`${color}`}>
                                     Contact
-                                </div>
-                                
+                                </div> */}
+                                <NavMenu/>
                             </div>
                             
                         </div>
+                        
                         {/* <Menu ref={stickyElement}/>
                         <Cursor stickyElement={stickyElement}/> */}
                     </div>

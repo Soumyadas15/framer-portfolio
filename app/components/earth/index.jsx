@@ -21,7 +21,7 @@ export default function Earth() {
 
     return (
         <Canvas ref={scene}>
-            <ambientLight intensity={0.1} />
+            <ambientLight intensity={0.02} />
             <directionalLight intensity={2.5} position={[1, 0, -0.25]} />
             <motion.mesh scale={2.5} rotation-y={scrollYProgress}>
                 <sphereGeometry args={[1, 64, 64]} />

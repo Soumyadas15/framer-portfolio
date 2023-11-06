@@ -8,6 +8,7 @@ import Skills from './components/pages/Skills';
 import Landing from './components/pages/landing/Landing';
 import Loader from './components/Loader';
 import { AnimatePresence } from 'framer-motion';
+import Projects from './components/pages/Projects';
 
 export default function Home() {
   const scrollPosition = useScrollPosition();
@@ -29,11 +30,11 @@ export default function Home() {
 
   let bgColor = "bg-white";
 
-  if (scrollPosition >= 600 && scrollPosition < 1100) {
+  if (scrollPosition >= 400 && scrollPosition < 1100) {
     bgColor = "bg-black";
   } 
   else if (scrollPosition >= 1100 && scrollPosition < 2000) {
-    bgColor = "bg-neutral-900";
+    bgColor = "bg-black";
   }
   else if (scrollPosition >= 2000 && scrollPosition < 2800) {
     bgColor = "bg-neutral-100";
@@ -60,9 +61,9 @@ export default function Home() {
           <div className='flex h-full flex-col'>
             
             <Landing/>
-           
+            <Projects/>
             <Skills/>
-            
+            <Projects/>
           </div>
         </div>
       </Container>
