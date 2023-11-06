@@ -62,7 +62,7 @@ const Landing = ({
     const scrollPosition = useScrollPosition();
     const texts = ["Text 1", "Text 2", "Text 3", "Text 4"];
     const name = "Soumya".split("");
-    const start = "Its me".split("");
+    const start = "Im".split("");
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
