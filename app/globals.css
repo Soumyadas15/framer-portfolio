@@ -8,21 +8,5 @@ body,
   height: 100%;
   background-color: white;
   cursor: wait;
-  overflow-y: auto;
-}
-.mask-image {
-  mask-image: url('../public/mask.svg');
-  background-color: red;
-}
-
-.main 
-,.body {
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow-x: hidden;
-  color: #afa18f;
-  font-size: 64px;
-  line-height: 66px;
+  
 }
