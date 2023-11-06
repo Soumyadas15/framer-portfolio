@@ -15,7 +15,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={`
         ${font.className}
-        overflow-y-hidden
+        overflow-hidden
       `}
       suppressHydrationWarning
       >

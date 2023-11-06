@@ -11,11 +11,6 @@ const data = [
         speed: 0.5
     },
     {
-        title: "Nextjs",
-        description: "",
-        speed: 0.5
-    },
-    {
         title: "Nodejs",
         description: "",
         speed: 0.67
@@ -36,8 +31,10 @@ export default function Skillset() {
     const [selectedProject, setSelectedProject] = useState(null)
     return (
         <div className={styles.container}>
+            
             <Titles data={data} setSelectedProject={setSelectedProject}/>
             <Descriptions data={data} selectedProject={selectedProject}/>
         </div>
+          
     )
 }

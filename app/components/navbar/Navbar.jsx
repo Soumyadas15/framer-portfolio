@@ -11,6 +11,12 @@ const Navbar = () => {
     const scrollPosition = useScrollPosition();
     const stickyElement = useRef(null);
 
+    let color = "text-black";
+
+    if (scrollPosition >= 600 && scrollPosition < 1100) {
+        color = "text-white";
+    } 
+
     return ( 
         <div className={`
                 w-full 
@@ -44,16 +50,30 @@ const Navbar = () => {
                         "
                     >
                         <div className={merge(
-                            scrollPosition > 1800 ? 'text-black' : 'text-[#3fffac]',
+                            scrollPosition > 1800 ? 'text-black' : 'text-[#ff2257]',
                             
                             'text-xl font-semibold transition duration-200 ease-in ml-10'
                         )}>
                             
                             Soumya
-                        
                         </div>
-                        <Menu ref={stickyElement}/>
-                        <Cursor stickyElement={stickyElement}/>
+                        <div className="mr-10">
+                            <div className="flex gap-10">
+                                <div className={`${color}`}>
+                                    Home
+                                </div>
+                                <div className={`${color}`}>
+                                    Work
+                                </div>
+                                <div className={`${color}`}>
+                                    Contact
+                                </div>
+                                
+                            </div>
+                            
+                        </div>
+                        {/* <Menu ref={stickyElement}/>
+                        <Cursor stickyElement={stickyElement}/> */}
                     </div>
                 </Container>
             </div>

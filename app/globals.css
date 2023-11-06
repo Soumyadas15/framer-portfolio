@@ -6,7 +6,6 @@ html,
 body,
 :root{
   height: 100%;
-  width: 100%;
   background-color: white;
   cursor: wait;
 }
@@ -14,64 +13,15 @@ body,
   mask-image: url('../public/mask.svg');
   background-color: red;
 }
-.main {
-  height: 100vh;
-}
 
-.main .mask, .main .body {
-  width: 100%;
+.main 
+,.body {
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow-x: hidden;
   color: #afa18f;
   font-size: 64px;
   line-height: 66px;
-  cursor: none;
-}
-
-.main .body p {
-  width: 1000px;
-  padding: 40px;
-}
-
-.main .body span {
-  color: #ec4e39;
-}
-
-.main .mask {
-  mask-image: url('../public/mask.svg');
-  mask-repeat: inherit;
- 
-  background: #ec4e39;
-  position: absolute;
-  
-}
-
-.circle-container {
-  width: 200px;
-  height: 200px;
-  border: 2px solid #333;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.rotating-sentence {
-  animation: rotate 5s linear infinite;
-  transform-origin: 50% 100%;
-}
-
-@keyframes rotate {
-  0% {
-    transform: translateX(-50%) rotate(0deg);
-  }
-  100% {
-    transform: translateX(-50%) rotate(360deg);
-  }
-}
-
-.no-cursor{
-  @apply cursor-none;
 }

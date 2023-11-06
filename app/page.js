@@ -4,14 +4,10 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import Container from './components/Container';
 import { useScrollPosition } from './hooks/useScrollPosition';
-import Section from './components/pages/section';
-import Contact from './components/pages/Contact';
-import Projects from './components/pages/Projects';
 import Skills from './components/pages/Skills';
 import Landing from './components/pages/landing/Landing';
 import Loader from './components/Loader';
 import { AnimatePresence } from 'framer-motion';
-import Parallax from './components/pages/parallax'
 
 export default function Home() {
   const scrollPosition = useScrollPosition();
@@ -25,13 +21,13 @@ export default function Home() {
 
         setTimeout(() => {
           setIsLoading(false);
-          document.body.style.cursor = 'none';
+          document.body.style.cursor = 'default';
         }, 2000)
       }
     )()
   }, []);
 
-  let bgColor = "bg-neutral-900";
+  let bgColor = "bg-white";
 
   if (scrollPosition >= 600 && scrollPosition < 1100) {
     bgColor = "bg-black";
@@ -64,13 +60,9 @@ export default function Home() {
           <div className='flex h-full flex-col'>
             
             <Landing/>
-            <Section
-                primary={primary}
-                secondary={secondary}
-            />
+           
             <Skills/>
-            <Parallax/>
-            <Landing/>
+            
           </div>
         </div>
       </Container>

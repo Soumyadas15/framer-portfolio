@@ -1,24 +1,84 @@
 'use client'
 
 import { useScrollPosition } from "../../../hooks/useScrollPosition";
-import AnimatedCursor from "react-animated-cursor"
-import { motion } from 'framer-motion'
 import Container from "../../Container";
-import RotatingText from '../../../utils/RotatingText'
-import Rounded from '../../tools/Button'
-import styles from './style.module.scss';
+import TextSpan from '../../reusable/TextSpan'
+import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+
+const translate = {
+    initial: {
+        y: "100%",
+        opacity: 0
+    },
+    enter: (i) => ({
+        y: 0,
+        opacity: 1,
+        transition: {duration: 1, ease: [0.76, 0, 0.24, 1], delay: i + 2}
+    }),
+    exit: (i) => ({
+        y: "100%",
+        opacity: 0,
+        transition: {duration: 0.7, ease: [0.76, 0, 0.24, 1], delay: 0.2}
+    })
+}
+const translateStatic = {
+    initial: {
+        y: "100%",
+        opacity: 0
+    },
+    enter:{
+        y: 0,
+        opacity: 1,
+        transition: {duration: 1, ease: [0.76, 0, 0.24, 1], delay: 2}
+    },
+    exit:{
+        y: "100%",
+        opacity: 0,
+        transition: {duration: 0.7, ease: [0.76, 0, 0.24, 1], delay: 0.2}
+    }
+}
+const imageTranslate = {
+    initial: {
+        scale: 1.2,
+        opacity: 1,
+    },
+    enter:{
+        scale: 1,
+        opacity: 1,
+        transition: {duration: 1, ease: [0.76, 0, 0.24, 1], delay: 1}
+    },
+    exit:{
+        scale: "1.5",
+        opacity: 1,
+        transition: {duration: 0.7, ease: [0.76, 0, 0.24, 1], delay: 0.2}
+    }
+}
 
 const Landing = ({
     
 }) => {
     const scrollPosition = useScrollPosition();
     const texts = ["Text 1", "Text 2", "Text 3", "Text 4"];
+    const name = "Soumya".split("");
+    const start = "Its me".split("");
+    const [isVisible, setIsVisible] = useState(false);
+
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            setIsVisible(true);
+        }, 2200);
+
+        return () => {
+            clearTimeout(timeout);
+        };
+    }, []);
 
     return ( 
         <div className = {`
             h-screen 
             flex 
-            w-full
+            
             items-center 
             justify-center 
             transition
@@ -28,13 +88,107 @@ const Landing = ({
         `}>
             <Container full={false}>
                 
-                <div className="w-screen flex justify-between">
-                    <div className="ml-10 md:ml-20 md:text-8xl text-6xl flex text-center md:text-left flex-col">
-                        <div className="text-white">I am</div>
-                        <div className="font-bold text-green-400">Saumya</div>
+                <div className="flex flex-col items-center">
+                    <div className="w-screen flex flex-col md:flex-row justify-between">
+                        <div className="md:ml-20 md:text-[130px] text-7xl flex items-center z-10 md:items-start flex-col">
+                                {isVisible && (
+                                    <div className="flex overflow-hidden">
+                                        {start.map((letter, index) => {
+                                            return( 
+                                                
+                                                    <TextSpan key={index} start={true}>
+                                                        <motion.div
+                                                            custom={(index * 0.1)}
+                                                            variants={translate}
+                                                            initial='initial'
+                                                            animate='enter'
+                                                            exit='exit'
+                                                            key={index}
+                                                        >
+                                                            {letter}
+                                                        </motion.div>
+                                                    </TextSpan>
+                                                
+                                            )
+                                        })}
+                                    </div>
+                                )}
+                                {isVisible && (
+                                    <div className="flex overflow-hidden h-[80px] md:h-[150px]">
+                                        {name.map((letter, index) => {
+                                            return(
+                                                    <TextSpan key={index}>
+                                                        <motion.div
+                                                            custom={(index * 0.1)}
+                                                            variants={translate}
+                                                            initial='initial'
+                                                            animate='enter'
+                                                            exit='exit'
+                                                            key={index}
+                                                        >
+                                                            {letter}
+                                                        </motion.div>
+                                                    </TextSpan>
+                                                
+                                            )
+                                        })}
+                                    </div>
+                                )}
+                        </div>
+                        {isVisible && (
+                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-30 md:opacity-80">
+                                <motion.img variants={imageTranslate} initial='initial' animate='enter' exit='exit' 
+                                    src={'/images/shape.png'}
+                                    alt='Shape Image'
+                                    height={380}
+                                    width={380}
+                                />
+                            </div>
+                        )}
+
+                        {isVisible && (
+                            <div className="md:mr-20 flex flex-col items-center mt-10 md:items-end z-10">
+                                <motion.div variants={translateStatic} initial='initial' animate='enter' exit='exit'>
+                                    <div className="overflow-hidden">
+                                        I am an interactive designer based
+                                    </div>
+                                </motion.div>
+                                <motion.div variants={translateStatic} initial='initial' animate='enter' exit='exit'>
+                                    <div className="overflow-hidden">
+                                        in India. I make engaging experiences
+                                    </div> 
+                                </motion.div>
+                                <motion.div variants={translateStatic} initial='initial' animate='enter' exit='exit'>
+                                    <div className="overflow-hidden">
+                                        for the web.
+                                    </div>
+                                </motion.div>
+                                
+                            </div>
+                        )}
+                        
+                        
+                    </div>
+                    
+                    <div className="w-[88%] h-5 flex items-center justify-between absolute bottom-10 md:bottom-20 gap-5">
+                        <div className="flex gap-5">
+                            <div className="bg-[#ff2257] p-4 rounded-full"/>
+                            <div className="bg-black p-4 rounded-full"/>
+                        </div>
+                        {isVisible && (
+                            <motion.div variants={translateStatic} initial='initial' animate='enter' exit='exit'>
+                                <div className="flex items-center gap-4">
+                                <hr className="w-[100px] border-1 border-black"/>
+                                    <div className="text-xs md:text-md">
+                                        Created by Soumya @ 2023
+                                    </div> 
+                                </div>
+                            </motion.div>
+                        )}
                     </div>
                     
                 </div>
+                
             </Container>
         </div>
      );
