@@ -18,7 +18,7 @@ const Skills = () => {
 
     return ( 
         <div className = {`
-            h-screen 
+            mt-10
             flex 
             items-center 
             justify-center 

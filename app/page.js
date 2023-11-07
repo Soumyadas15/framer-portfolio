@@ -38,10 +38,10 @@ export default function Home() {
   else if (scrollPosition >= 1100 && scrollPosition < 2000) {
     bgColor = "bg-black";
   }
-  else if (scrollPosition >= 2000 && scrollPosition < 2600) {
+  else if (scrollPosition >= 2000 && scrollPosition < 2500) {
     bgColor = "bg-white";
   }
-  else if (scrollPosition >= 2600 && scrollPosition < 3800) {
+  else if (scrollPosition >= 2500 && scrollPosition < 4500) {
     bgColor = "bg-black";
   }
 
@@ -68,7 +68,7 @@ export default function Home() {
             <Landing/>
             <Paragraph tag='Little bit about me' content={primary}/>
             <Skills/>
-            <Paragraph tag='Background' content={secondary} black={true}/>
+            <Paragraph tag='Background' content={primary} black={true}/>
             <div className='block md:hidden'>
               <MobileProjects/>
             </div>
