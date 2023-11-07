@@ -18,7 +18,8 @@ const Skills = () => {
 
     return ( 
         <div className = {`
-            mt-[5%]
+        h-[80%]
+        md:h-screen
             flex 
             items-center 
             justify-center 

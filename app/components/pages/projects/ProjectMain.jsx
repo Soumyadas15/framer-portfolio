@@ -8,7 +8,7 @@ const ProjectMain = () => {
 
     return ( 
         <div className = {`
-            mt-[8%]
+            h-screen  
             flex 
             items-center 
             justify-center 

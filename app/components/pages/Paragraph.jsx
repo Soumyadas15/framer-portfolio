@@ -12,7 +12,8 @@ const Paragraph = ({tag, content, black}) => {
         <Container>
             <div className="flex text-start justify-center">
                 <div className = {`
-                    mt-[5%]
+                    h-[80%]
+                    md:h-screen
                     text-3xl
                     md:text-6xl
                     font-semibold
