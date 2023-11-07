@@ -27,6 +27,8 @@ const Projects = () => {
                         <div>
                             I am a <span className="text-[#ff2257]">visual designer</span> based in 
                             India. My passion for design comes from a pretty yoyng age 
+                            indeed. I am a <span className="text-[#ff2257]">visual designer</span> based in 
+                            India. My passion for design comes from a pretty yoyng age 
                             indeed.
                         </div>
                         

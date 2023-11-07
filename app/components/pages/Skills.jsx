@@ -32,10 +32,7 @@ const Skills = () => {
             <div className="h-[400px] w-[400px] md:h-[700px] md:w-[700px] block">
                 <Earth/>
             </div>
-        
-
             
-
             <Button className='
                 absolute 
                 bottom-20 
