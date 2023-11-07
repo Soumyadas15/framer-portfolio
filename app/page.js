@@ -9,7 +9,7 @@ import Landing from './components/pages/landing/Landing';
 import Loader from './components/Loader';
 import { AnimatePresence } from 'framer-motion';
 import Paragraph from './components/pages/Paragraph';
-import Projects from './components/pages/projects/Projects'
+import ProjectMain from './components/pages/projects/ProjectMain'
 import MobileProjects from './components/pages/projects/mobile/MobileProjects'
 
 export default function Home() {
@@ -39,7 +39,7 @@ export default function Home() {
     bgColor = "bg-black";
   }
   else if (scrollPosition >= 2000 && scrollPosition < 2500) {
-    bgColor = "bg-white";
+    bgColor = "bg-black";
   }
   else if (scrollPosition >= 2500 && scrollPosition < 4500) {
     bgColor = "bg-black";
@@ -68,14 +68,10 @@ export default function Home() {
             <Landing/>
             <Paragraph tag='Little bit about me' content={primary}/>
             <Skills/>
-            <Paragraph tag='Background' content={primary} black={true}/>
-            <div className='block md:hidden'>
-              <MobileProjects/>
-            </div>
-            <div className='hidden md:block'>
-              <Projects/>
-            </div>
+            <Paragraph tag='Background' content={primary} black={false}/>
+            <ProjectMain/>
             
+            <Paragraph tag='Little bit about me' content={primary}/>
             <Paragraph tag='Little bit about me' content={primary}/>
           </div>
         </div>

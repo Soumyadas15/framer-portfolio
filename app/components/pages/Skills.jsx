@@ -18,7 +18,7 @@ const Skills = () => {
 
     return ( 
         <div className = {`
-            mt-10
+            mt-[5%]
             flex 
             items-center 
             justify-center 
