@@ -29,7 +29,7 @@ const Skills = () => {
             relative
             
         `}>
-            <div className="h-[700px] w-[700px] block">
+            <div className="h-[350px] w-[350px] md:h-[700px] md:w-[700px] block">
                 <Earth/>
             </div>
         
@@ -42,8 +42,10 @@ const Skills = () => {
                 left-2/4 
                 md:right-5
                 transform -translate-x-2/4 
-                w-36 
-                h-36 
+                w-24
+                h-24 
+                md:w-36
+                md:h-36
                 md:bottom-20
                 md:left-auto
                 bg-[#ff2257] 
@@ -56,9 +58,9 @@ const Skills = () => {
                 group
                 z-10
             '>
-                    <div className="flex flex-col items-center space-y-[-5px]">
-                       <div className="z-10 text-[20px] group-hover:text-black">Hover</div>
-                        <div className="z-10 text-[20px] group-hover:text-black">me</div> 
+                    <div className="flex flex-col items-center space-y-[-10px]">
+                       <div className="z-10 text-[15px] group-hover:text-black">My</div>
+                        <div className="z-10 text-[15px] group-hover:text-black">Skills</div> 
                     </div>
                         
             </Button>
