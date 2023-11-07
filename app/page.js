@@ -30,18 +30,18 @@ export default function Home() {
 
   let bgColor = "bg-white";
 
-  if (scrollPosition >= 400 && scrollPosition < 1100) {
+  if (scrollPosition >= 500 && scrollPosition < 1100) {
     bgColor = "bg-black";
   } 
   else if (scrollPosition >= 1100 && scrollPosition < 2000) {
     bgColor = "bg-black";
   }
   else if (scrollPosition >= 2000 && scrollPosition < 2800) {
-    bgColor = "bg-neutral-100";
+    bgColor = "bg-white";
   }
 
-  const primary = <p>Im 21 and I am a <span className='text-green-500'>developer</span> and <span className='text-green-500'>interactive designer</span> based in Kolkata, India</p>;
-  const secondary = <p>I have skills that are not replaced by AI yet, I like my design as clean as my room.</p>;
+  const primary = <p><span className="text-[#ff2257]">I am an interactive developer</span> based in India. I like <span className='text-[#ff2257]'>creating visually appealing experiences.</span> My goal is to inspire and connect with people through development and design.</p>;
+  const secondary = <p>Good<span className="text-[#ff2257]"> design speaks louder than words.</span> And obviously not every design is good.</p>;
   
   return (
       <Container
@@ -61,9 +61,9 @@ export default function Home() {
           <div className='flex h-full flex-col'>
             
             <Landing/>
-            <Projects/>
+            <Projects tag='Little bit about me' content={primary}/>
             <Skills/>
-            <Projects/>
+            <Projects tag='Background' content={secondary} black={true}/>
           </div>
         </div>
       </Container>

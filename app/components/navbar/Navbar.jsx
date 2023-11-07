@@ -13,7 +13,7 @@ const Navbar = () => {
 
     let color = "text-black";
 
-    if (scrollPosition >= 600 && scrollPosition < 2000) {
+    if (scrollPosition >= 500 && scrollPosition < 2000) {
         color = "text-white";
     } 
     
@@ -50,11 +50,7 @@ const Navbar = () => {
                             md:gap-0
                         "
                     >
-                        <div className={merge(
-                            scrollPosition > 1800 ? 'text-black' : 'text-[#ff2257]',
-                            
-                            'text-xl font-semibold transition duration-200 ease-in ml-10 mt-6'
-                        )}>
+                        <div className={`text-xl font-semibold transition duration-200 ease-in ml-10 mt-6 ${color}`}>
                             
                             Soumya
                         </div>

@@ -5,7 +5,7 @@ import AnimatedCursor from "react-animated-cursor"
 import Container from "../Container";
 import Button from "../reusable/Button";
 
-const Projects = () => {
+const Projects = ({tag, content, black}) => {
     const scrollPosition = useScrollPosition();
 
     return ( 
@@ -13,23 +13,39 @@ const Projects = () => {
             <div className="flex text-start justify-center">
                 <div className = {`
                     h-screen
-                    text-4xl
+                    text-3xl
                     md:text-6xl
                     font-semibold
-                    leading-snug
+                    leading-tight
                     md:leading-normal
                     w-[80%]
                     flex
-                    items-center
-                    text-white
+                    flex-col
+                    items-start
+                    justify-center
+                    ${black ? 'text-black' : 'text-white'}
                 `}>
+                        <div className="flex gap-4 items-center mb-[2%]">
+                            <div className={`
+                                    text-xs 
+                                    md:text-xl 
+                                    opacity-60 
+                                    font-light
+                                    ${black ? 'text-black' : 'text-white'}
+                            `}>
+                                {tag}
+                            </div>
+                            <hr className={`
+                                    w-[100px] 
+                                    border-1 
+                                    opacity-60
+                                    ${black ? 'border-black' : 'border-white'}
+                            `}/>
+                        </div>
+                        
                     
                         <div>
-                            I am a <span className="text-[#ff2257]">visual designer</span> based in 
-                            India. My passion for design comes from a pretty yoyng age 
-                            indeed. I am a <span className="text-[#ff2257]">visual designer</span> based in 
-                            India. My passion for design comes from a pretty yoyng age 
-                            indeed.
+                            {content}
                         </div>
                         
             

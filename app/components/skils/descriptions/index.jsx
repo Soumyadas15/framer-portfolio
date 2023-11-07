@@ -9,6 +9,10 @@ export default function index({data, selectedProject}) {
     
     return (
         <div className={styles.descriptions}>
+            <div className='flex gap-4 items-center mb-[2%] opacity-0'>
+                <div className='text-white opacity-60 relative pl-[10.5%] text-xs md:text-xl'>Skills I have</div>
+                <hr className="w-[100px] border-1 border-white opacity-60"/>
+            </div>
             {
                 data.map( (project, i) => {
                     const { title, description } = project;
@@ -18,7 +22,12 @@ export default function index({data, selectedProject}) {
                         className={styles.description}
                         style={{clipPath: selectedProject == i ? "inset(0 0 0)" : "inset(50% 0 50%"}}
                     >
-                        <p>{crop(title, 9)}</p>
+                        <p>
+                            <div className='font-bold text-6xl md:text-9xl mb-2'>
+                                {crop(title, 9)}
+                            </div>
+                            
+                        </p>
                         <p>{description}</p>
                     </div>
                     )
