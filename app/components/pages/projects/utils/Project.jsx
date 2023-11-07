@@ -15,7 +15,7 @@ export default function index({index, title, manageModal}) {
             className="flex w-[80vw] items-center justify-between p-10 border-t border-neutral-600 cursor-pointer transition duration-200 ease-in-out hover:opacity-50"
         >
                 <h2 className="text-4xl font-light transition duration-400 text-white">{title}</h2>
-                <p className="font-light transition duration-400 text-white opacity-0 md:opacity-50 text-xl">Design & Development</p>
+                <p className="font-light transition duration-400 text-white opacity-0 md:opacity-50 text-xl">Fullstack</p>
         </div>
     )
 }
