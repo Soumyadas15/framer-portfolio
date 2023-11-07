@@ -1,31 +1,23 @@
 'use client'
 
 import { useScrollPosition } from "../../hooks/useScrollPosition";
-import AnimatedCursor from "react-animated-cursor"
-import { useScroll } from "framer-motion";
 import dynamic from 'next/dynamic';
 import Skillset from '../skils'
 import Button from '../reusable/Button'
-import styles from './style.module.scss';
 
 const data = [
     {
-        title: "Reactjs",
+        title: "Frontend",
         description: "",
         speed: 0.5
     },
     {
-        title: "Nodejs",
+        title: "Backend",
         description: "",
         speed: 0.67
     },
     {
-        title: "Python",
-        description: "",
-        speed: 0.8
-    },
-    {
-        title: "Java",
+        title: "UI & UX",
         description: "",
         speed: 0.8
     },
@@ -36,7 +28,7 @@ const Earth = dynamic(() => import('../earth'), {
     loading: () => <img src="/assets/placeholder.png"></img>
   })
 
-const Skills = () => {
+const MyJob = () => {
     const scrollPosition = useScrollPosition();
 
     return ( 
@@ -80,8 +72,8 @@ const Skills = () => {
                     z-10
                 '>
                         <div className="flex flex-col items-center space-y-[-10px]">
-                        <div className="z-10 text-[15px] group-hover:text-[20px] transition duration-1000">My</div>
-                            <div className="z-10 text-[15px] group-hover:text-[20px] transition duration-1000">Skills</div> 
+                        <div className="z-10 text-[15px] group-hover:text-[20px] transition duration-1000">Stuff</div>
+                            <div className="z-10 text-[15px] group-hover:text-[20px] transition duration-1000">I do</div> 
                         </div>
                             
                 </Button>
@@ -92,4 +84,4 @@ const Skills = () => {
      );
 }
  
-export default Skills;
+export default MyJob;

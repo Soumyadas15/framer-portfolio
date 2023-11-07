@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import Container from './components/Container';
 import { useScrollPosition } from './hooks/useScrollPosition';
 import Skills from './components/pages/Skills';
+import MyJob from './components/pages/MyJob'
 import Landing from './components/pages/landing/Landing';
 import Loader from './components/Loader';
 import { AnimatePresence } from 'framer-motion';
@@ -41,12 +42,12 @@ export default function Home() {
   else if (scrollPosition >= 2000 && scrollPosition < 2500) {
     bgColor = "bg-black";
   }
-  else if (scrollPosition >= 2500 && scrollPosition < 4500) {
+  else if (scrollPosition >= 2500 && scrollPosition < 8000) {
     bgColor = "bg-black";
   }
 
   const primary = <p><span className="text-[#ff2257]">I am an interactive developer</span> based in India. I like <span className='text-[#ff2257]'>creating visually appealing experiences.</span> My goal is to inspire and connect with people through development and design.</p>;
-  const secondary = <p>Good<span className="text-[#ff2257]"> design speaks louder than words.</span> And obviously not every design is good.</p>;
+  const secondary = <p>The main component of my design is<span className="text-[#ff2257]"> aesthetics.</span> I try to craft the perfect balance between <span className="text-[#ff2257]">aesthetics</span> and <span className="text-[#ff2257]">user experience.</span></p>;
   
   return (
       <Container
@@ -68,7 +69,8 @@ export default function Home() {
             <Landing/>
             <Paragraph tag='Little bit about me' content={primary}/>
             <Skills/>
-            <Paragraph tag='Background' content={primary} black={false}/>
+            <Paragraph tag='Background' content={secondary} black={false}/>
+            <MyJob/>
             <ProjectMain/>
             
             <Paragraph tag='Little bit about me' content={primary}/>

@@ -10,6 +10,23 @@ body,
   cursor: wait;
   
 }
+@keyframes slideInLeft {
+  from {
+    margin-left: 0;
+  }
+  to {
+    margin-left: 20px; /* Adjust the value according to your preference */
+  }
+}
+@layer utilities {
+  .hover-move-right {
+    transition: margin-left 0.3s ease; /* You can adjust the duration and timing function according to your preference */
+  }
+
+  hover-move-right:hover {
+    margin-left: -50px; /* Adjust the value according to how much you want the text to move to the right */
+  }
+}
 @layer utilities {
   @variants responsive {
     /* Hide scrollbar for Chrome, Safari and Opera */

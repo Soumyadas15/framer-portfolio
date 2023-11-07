@@ -36,4 +36,20 @@
             transform: translateX(10px);
         }
     }
+    .hoverMoveRightContainer {
+        &:hover {
+          .hover-move-right {
+            /* Define styles for the hover-move-right class here */
+            /* For example: */
+            transform: translateX(10px);
+            /* Add any other styles you want to apply when the parent div is hovered */
+          }
+        }
+      }
+      
+      .hover-move-right {
+        /* Define initial styles for the hover-move-right class here */
+        /* For example: */
+        transition: transform 0.3s ease;
+      }
 }

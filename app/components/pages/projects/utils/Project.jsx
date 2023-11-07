@@ -12,10 +12,13 @@ export default function index({index, title, manageModal}) {
             onMouseLeave={(e) => {
                 manageModal(false, index, e.clientX, e.clientY);
             }}
-            className="flex w-[80vw] items-center justify-between p-10 border-t border-neutral-600 cursor-pointer transition duration-200 ease-in-out hover:opacity-50"
+            className="flex w-[80vw] items-center justify-between p-12 border-t border-neutral-600 cursor-pointer transition duration-800 hover:opacity-50 group"
         >
-                <h2 className="text-4xl font-light transition duration-400 text-white">{title}</h2>
-                <p className="font-light transition duration-400 text-white opacity-0 md:opacity-50 text-xl">Fullstack</p>
+                <div className='flex w-full justify-between items-center group-hover:scale-105 transition duration-400'>
+                    <h2 className="text-4xl font-bold transition duration-800 text-white hover-move-right">{title}</h2>
+                    <p className="font-light transition duration-400 text-white opacity-0 md:opacity-50 text-xl">Fullstack</p>
+                </div>
+                
         </div>
     )
 }

@@ -7,8 +7,11 @@ import MobileProjects from './mobile/MobileProjects';
 const ProjectMain = () => {
 
     return ( 
+        
         <div className = {`
-            h-screen  
+            h-[80%]
+            mt-[8%]
+            md:h-screen
             flex 
             items-center 
             justify-center 
@@ -17,7 +20,7 @@ const ProjectMain = () => {
             duration-400
             ease-in
             relative
-            
+            overflow-x-hidden
         `}>
             <div className='block md:hidden'>
                 <MobileProjects/>
