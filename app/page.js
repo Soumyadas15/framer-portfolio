@@ -8,7 +8,8 @@ import Skills from './components/pages/Skills';
 import Landing from './components/pages/landing/Landing';
 import Loader from './components/Loader';
 import { AnimatePresence } from 'framer-motion';
-import Projects from './components/pages/Projects';
+import Paragraph from './components/pages/Paragraph';
+import Projects from './components/pages/projects/Projects'
 
 export default function Home() {
   const scrollPosition = useScrollPosition();
@@ -36,8 +37,11 @@ export default function Home() {
   else if (scrollPosition >= 1100 && scrollPosition < 2000) {
     bgColor = "bg-black";
   }
-  else if (scrollPosition >= 2000 && scrollPosition < 2800) {
+  else if (scrollPosition >= 2000 && scrollPosition < 2600) {
     bgColor = "bg-white";
+  }
+  else if (scrollPosition >= 2600 && scrollPosition < 3200) {
+    bgColor = "bg-black";
   }
 
   const primary = <p><span className="text-[#ff2257]">I am an interactive developer</span> based in India. I like <span className='text-[#ff2257]'>creating visually appealing experiences.</span> My goal is to inspire and connect with people through development and design.</p>;
@@ -61,9 +65,11 @@ export default function Home() {
           <div className='flex h-full flex-col'>
             
             <Landing/>
-            <Projects tag='Little bit about me' content={primary}/>
+            <Paragraph tag='Little bit about me' content={primary}/>
             <Skills/>
-            <Projects tag='Background' content={secondary} black={true}/>
+            <Paragraph tag='Background' content={secondary} black={true}/>
+            <Projects/>
+            <Paragraph tag='Little bit about me' content={primary} black={true}/>
           </div>
         </div>
       </Container>

@@ -5,7 +5,7 @@ import AnimatedCursor from "react-animated-cursor"
 import Container from "../Container";
 import Button from "../reusable/Button";
 
-const Projects = ({tag, content, black}) => {
+const Paragraph = ({tag, content, black}) => {
     const scrollPosition = useScrollPosition();
 
     return ( 
@@ -56,4 +56,4 @@ const Projects = ({tag, content, black}) => {
      );
 }
  
-export default Projects;
+export default Paragraph;
