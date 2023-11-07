@@ -41,7 +41,7 @@ const translateStatic = {
 }
 const imageTranslate = {
     initial: {
-        scale: 1.2,
+        scale: 1.8,
         opacity: 1,
     },
     enter:{
@@ -137,7 +137,7 @@ const Landing = ({
                                 )}
                         </div>
                         {isVisible && (
-                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-30 md:opacity-80">
+                            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-50 md:opacity-80">
                                 <motion.img variants={imageTranslate} initial='initial' animate='enter' exit='exit' 
                                     src={'/images/shape.png'}
                                     alt='Shape Image'
