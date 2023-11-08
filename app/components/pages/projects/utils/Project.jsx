@@ -12,7 +12,7 @@ export default function index({index, title, manageModal}) {
             onMouseLeave={(e) => {
                 manageModal(false, index, e.clientX, e.clientY);
             }}
-            className="flex w-[80vw] items-center justify-between p-12 border-t border-neutral-600 cursor-pointer transition duration-800 hover:opacity-50 group"
+            className="flex w-[80vw] items-center justify-between p-12 border-t border-neutral-600 cursor-pointer transition duration-800 group"
         >
                 <div className='flex w-full justify-between items-center group-hover:scale-105 transition duration-400'>
                     <h2 className="text-4xl font-regular transition duration-800 text-white hover-move-right">{title}</h2>
