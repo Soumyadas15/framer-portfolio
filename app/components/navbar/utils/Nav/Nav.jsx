@@ -7,7 +7,7 @@ import { perspective, slideIn } from "./anim";
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 
-export default function index() {
+export default function Nav() {
     const router = useRouter();
   return (
     <div className={styles.nav}>
