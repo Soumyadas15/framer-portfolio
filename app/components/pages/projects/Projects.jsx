@@ -9,22 +9,22 @@ import Button from '../../reusable/Button';
 
 const projects = [
   {
-    title: "Retrogroove",
+    title: "Project 1",
     src: "c2montreal.png",
     color: "#ffca36"
   },
   {
-    title: "Univibe",
+    title: "Project 2",
     src: "officestudio.png",
     color: "#8C8C8C"
   },
   {
-    title: "Classconnect",
+    title: "Project 3",
     src: "locomotive.png",
     color: "#EFE8D3"
   },
   {
-    title: "Listings",
+    title: "Project 4",
     src: "silencio.png",
     color: "#706D63"
   }
