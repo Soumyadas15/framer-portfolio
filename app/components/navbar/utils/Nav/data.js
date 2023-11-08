@@ -5,7 +5,7 @@ export const links = [
     },
     {
         title: "About",
-        href: "/"
+        href: "/about"
     },
     {
         title: "Skills",

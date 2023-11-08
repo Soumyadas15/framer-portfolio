@@ -1,9 +1,14 @@
+"use client"
+
 import styles from './style.module.scss';
 import { motion } from 'framer-motion';
 import { links, footerLinks } from './data';
 import { perspective, slideIn } from "./anim";
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 
 export default function index() {
+    const router = useRouter();
   return (
     <div className={styles.nav}>
        <div className={styles.body}>
@@ -19,10 +24,15 @@ export default function index() {
                           initial="initial"
                           animate="enter"
                           exit="exit"
+                          onClick={() => {
+                            router.push(href);
+                          }}
                         >
-                            <a>
-                                <div className='hover:text-white transition duration-200 ease-in cursor-pointer hover:scale-105'>{title}</div>
-                            </a>
+                            
+                                <a className='hover:text-white transition duration-200 ease-in cursor-pointer hover:scale-105'>
+                                {title}
+                                </a>
+                            
                         </motion.div>
                     </div>
                 )

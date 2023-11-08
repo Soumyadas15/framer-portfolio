@@ -7,7 +7,7 @@ import { useScrollPosition } from './hooks/useScrollPosition';
 import Skills from './components/pages/Skills';
 import MyJob from './components/pages/MyJob'
 import Landing from './components/pages/landing/Landing';
-import Loader from './components/Loader';
+import Loader from './components/reusable/Loaders/Loader';
 import { AnimatePresence } from 'framer-motion';
 import Paragraph from './components/pages/Paragraph';
 import ProjectMain from './components/pages/projects/ProjectMain'

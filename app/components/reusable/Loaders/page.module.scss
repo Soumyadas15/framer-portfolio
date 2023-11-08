@@ -22,7 +22,7 @@
   }
 
   .mask{
-    mask-image: url('../../public/mask.svg');
+    mask-image: url('../../../../public/mask.svg');
     mask-repeat: no-repeat;
     mask-size: 40px;
     background: #3fffac;
@@ -44,7 +44,7 @@
   justify-content: center;
   position: fixed;
   z-index: 99;
-  background-color: #141516;
+  
   svg{
       position: absolute;
       top: 0;

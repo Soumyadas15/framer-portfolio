@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion";
-import { slideUp, opacity } from "../utils/animator";
+import { slideUp, opacity } from "../../../utils/animator";
 import { useEffect, useState } from "react";
 import styles from './page.module.scss';
 
@@ -40,7 +40,7 @@ const Loader = () => {
             variants={slideUp}
             initial='initial'
             exit='exit'
-            className={styles.introduction}>
+            className={`${styles.introduction}`}>
             {dimension.width > 0 && 
             <>
                 <motion.p variants={opacity} initial="initial" animate="enter">{words[index]}</motion.p>
