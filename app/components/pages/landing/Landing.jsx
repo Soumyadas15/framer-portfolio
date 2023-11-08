@@ -78,7 +78,7 @@ const Landing = ({
 }) => {
     const scrollPosition = useScrollPosition();
     const texts = ["Text 1", "Text 2", "Text 3", "Text 4"];
-    const name = "Soumya".split("");
+    const name = "Bhupendr".split("");
     const start = "Im".split("");
     const [isVisible, setIsVisible] = useState(false);
 
@@ -222,7 +222,7 @@ const Landing = ({
                                 <div className="flex items-center gap-4">
                                 <hr className="w-[100px] border-1 border-black"/>
                                     <div className="text-xs md:text-md">
-                                        Created by Soumya @ 2023
+                                        Created by Bhupendr @ 2023
                                     </div> 
                                 </div>
                             </motion.div>

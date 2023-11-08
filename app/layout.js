@@ -6,8 +6,8 @@ import AnimatedCursor from "react-animated-cursor"
 const font = Montserrat({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Saumya',
-  description: 'Saumyas portfolio',
+  title: 'Bhupendr',
+  description: 'Bhupendrs portfolio',
 }
 
 export default function RootLayout({ children }) {
@@ -19,7 +19,7 @@ export default function RootLayout({ children }) {
       `}
       suppressHydrationWarning
       >
-        <Navbar/>
+        
         
         {children}
       </body>

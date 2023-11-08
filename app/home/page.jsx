@@ -1,19 +1,16 @@
 "use client"
 
-import Image from 'next/image';
 import { useEffect, useState } from 'react';
-import Container from './components/Container';
-import { useScrollPosition } from './hooks/useScrollPosition';
-import Skills from './components/pages/Skills';
-import MyJob from './components/pages/MyJob'
-import Landing from './components/pages/landing/Landing';
-import Loader from './components/reusable/Loaders/Loader';
+import Container from '../components/Container';
+import { useScrollPosition } from '../hooks/useScrollPosition';
+import Skills from '../components/pages/Skills';
+import MyJob from '../components/pages/MyJob'
+import Landing from '../components/pages/landing/Landing';
+import Loader from '../components/reusable/Loaders/Loader';
 import { AnimatePresence } from 'framer-motion';
-import Paragraph from './components/pages/Paragraph';
-import ProjectMain from './components/pages/projects/ProjectMain'
-import MobileProjects from './components/pages/projects/mobile/MobileProjects'
-import Navbar from './components/navbar/Navbar';
-import { useRouter } from 'next/router';
+import Paragraph from '../components/pages/Paragraph';
+import ProjectMain from '../components/pages/projects/ProjectMain'
+import Navbar from '../components/navbar/Navbar';
 
 export default function Home() {
   const scrollPosition = useScrollPosition();
@@ -23,10 +20,11 @@ export default function Home() {
     (
       async() => {
         const LocomotiveScroll = (await import('locomotive-scroll')).default;
+        
         const locomotiveScroll = new LocomotiveScroll({
-          // Customize Locomotive Scroll options here
-          resetNativeScroll: false,
-        });
+            // Customize Locomotive Scroll options here
+            resetNativeScroll: false,
+          });
 
         setTimeout(() => {
           setIsLoading(false);

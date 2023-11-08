@@ -6,6 +6,7 @@ import Container from "../components/Container";
 import Skills from "../components/pages/Skills";
 import { AnimatePresence } from "framer-motion";
 import StaticLoader from "../components/reusable/Loaders/StaticLoader";
+import Navbar from "../components/navbar/Navbar";
 
 const About = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -24,6 +25,8 @@ const About = () => {
       }, []);
 
     return ( 
+        <>
+        <Navbar/>
         <Container full={true}>
             <div className={`
             bg-black
@@ -43,6 +46,7 @@ const About = () => {
         </div>
             
         </Container>
+        </>
      );
 }
  

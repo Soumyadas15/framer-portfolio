@@ -26,6 +26,7 @@ export default function Nav() {
                           exit="exit"
                           onClick={() => {
                             router.push(href);
+                            router.refresh();
                           }}
                         >
                             
