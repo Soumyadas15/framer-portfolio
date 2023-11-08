@@ -8,7 +8,6 @@ import Skills from './components/pages/Skills';
 import MyJob from './components/pages/MyJob'
 import Landing from './components/pages/landing/Landing';
 import Loader from './components/reusable/Loaders/Loader';
-import Scroller from './components/reusable/Scroller';
 import { AnimatePresence } from 'framer-motion';
 import Paragraph from './components/pages/Paragraph';
 import ProjectMain from './components/pages/projects/ProjectMain'
@@ -25,22 +24,25 @@ export default function Home() {
     getDirection: true,
   };
 
-  // useEffect(() => {
-  //   (
-  //     async() => {
-  //       const LocomotiveScroll = (await import('locomotive-scroll')).default;
-  //       const scroll = new LocomotiveScroll({
-  //         ...options,
-  //         smooth: true,
-  //       });
-  //       setTimeout(() => {
-  //         setIsLoading(false);
-  //         document.body.style.cursor = 'default';
-  //       }, 2000);
-        
-  //     }
-  //   )()
-  // }, []);
+  useEffect(() => {
+    let scroll;
+
+    // Import the Locomotive Scroll module dynamically
+    import("locomotive-scroll").then((locomotiveModule) => {
+        scroll = new locomotiveModule.default({
+            smooth: true,
+            smoothMobile: false,
+            resetNativeScroll: true
+        });
+    });
+
+    // Cleanup function, only executed after the scroll variable is defined
+    return () => {
+        if (scroll) {
+            scroll.destroy();
+        }
+    };
+}, []);
 
   let bgColor = "bg-white";
 
@@ -63,7 +65,7 @@ export default function Home() {
   return (
       <>
       <Navbar/>
-      <Scroller>
+      {/* <Scroller> */}
       <Container
         full={true}
       >
@@ -92,7 +94,7 @@ export default function Home() {
           </div>
         </div>
       </Container>
-      </Scroller>
+      {/* </Scroller> */}
       </>
     
   )

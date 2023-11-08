@@ -79,7 +79,7 @@ const Landing = ({
     const scrollPosition = useScrollPosition();
     const texts = ["Text 1", "Text 2", "Text 3", "Text 4"];
     const name = "Bhupendr".split("");
-    const start = "Im".split("");
+    const start = ['I', ' ', 'a', 'm'];
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
@@ -122,6 +122,7 @@ const Landing = ({
                                                             animate='enter'
                                                             exit='exit'
                                                             key={index}
+                                                            className="font-light"
                                                         >
                                                             {letter}
                                                         </motion.div>
