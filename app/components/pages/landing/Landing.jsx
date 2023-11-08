@@ -48,10 +48,10 @@ const imageTranslate = {
     enter:{
         scale: 1,
         opacity: 1,
-        transition: {duration: 1, ease: [0.76, 0, 0.24, 1], delay: 0.8}
+        transition: {duration: 2, ease: [0.76, 0, 0.24, 1.78], delay: 0.8}
     },
     exit:{
-        scale: "1.5",
+        scale: "1",
         opacity: 1,
         transition: {duration: 0.7, ease: [0.76, 0, 0.24, 1], delay: 0.2}
     }
@@ -67,7 +67,7 @@ const imageDivTranslate = {
         transition: {duration: 1, ease: [0.76, 0, 0.24, 1], delay: 1.2}
     },
     exit:{
-        scale: "1.5",
+        scale: "1",
         opacity: 1,
         transition: {duration: 0.7, ease: [0.76, 0, 0.24, 1], delay: 0.2}
     }
