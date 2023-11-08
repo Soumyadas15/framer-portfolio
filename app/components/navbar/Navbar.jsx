@@ -11,10 +11,10 @@ const Navbar = () => {
     const scrollPosition = useScrollPosition();
     const stickyElement = useRef(null);
 
-    let color = "text-black";
+    let opacity = "opacity-100";
 
-    if (scrollPosition >= 500 && scrollPosition < 2000) {
-        color = "text-white";
+    if (scrollPosition >= 500 && scrollPosition < 8000) {
+        opacity = "opacity-0";
     } 
     
 
@@ -29,7 +29,7 @@ const Navbar = () => {
                 duration 200
                 ease-in
                 text-white
-                ${scrollPosition > 1500 ? 'text-black' : 'text-white'}
+                
         `}>
             <div
                 className="
@@ -50,7 +50,7 @@ const Navbar = () => {
                             md:gap-0
                         "
                     >
-                        <div className={`text-xl font-semibold transition duration-200 ease-in ml-10 mt-6 ${color}`}>
+                        <div className={`text-xl text-[#ff2257] font-semibold transition duration-200 ease-in ml-10 mt-6 ${opacity}`}>
                             
                             Soumya
                         </div>

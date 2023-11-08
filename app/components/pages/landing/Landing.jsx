@@ -6,6 +6,7 @@ import TextSpan from '../../reusable/TextSpan'
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Button from '../../reusable/Button'
+import Image from "next/image";
 
 const translate = {
     initial: {
@@ -47,7 +48,23 @@ const imageTranslate = {
     enter:{
         scale: 1,
         opacity: 1,
-        transition: {duration: 1, ease: [0.76, 0, 0.24, 1], delay: 1}
+        transition: {duration: 1, ease: [0.76, 0, 0.24, 1], delay: 0.8}
+    },
+    exit:{
+        scale: "1.5",
+        opacity: 1,
+        transition: {duration: 0.7, ease: [0.76, 0, 0.24, 1], delay: 0.2}
+    }
+}
+const imageDivTranslate = {
+    initial: {
+        scale: 1.8,
+        opacity: 1,
+    },
+    enter:{
+        scale: 1,
+        opacity: 1,
+        transition: {duration: 1, ease: [0.76, 0, 0.24, 1], delay: 1.2}
     },
     exit:{
         scale: "1.5",
@@ -138,12 +155,33 @@ const Landing = ({
                         </div>
                         {isVisible && (
                             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-50 md:opacity-80">
-                                <motion.img variants={imageTranslate} initial='initial' animate='enter' exit='exit' 
-                                    src={'/images/shape.png'}
-                                    alt='Shape Image'
-                                    height={380}
-                                    width={380}
-                                />
+                                <motion.div
+                                    variants={imageDivTranslate} 
+                                    initial='initial' 
+                                    animate='enter' 
+                                    exit='exit'
+                                
+                                >
+                                    <div className="h-[40vw] w-[35vw] flex items-center justify-center relative group overflow-hidden">
+                                        <motion.img
+                                            variants={imageTranslate} 
+                                            initial='initial' 
+                                            animate='enter' 
+                                            exit='exit'
+                                            alt="cover"
+                                            fill
+                                            src={'/images/shape.png'}
+                                            className='
+                                                object-fit 
+                                                h-full 
+                                                w-full 
+                                                group-hover:scale-105
+                                                transition
+                                            '
+                                        />
+                                    </div>
+                                </motion.div>
+                                
                             </div>
                         )}
 
