@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Container from '../components/Container';
 import { useScrollPosition } from '../hooks/useScrollPosition';
 import Skills from '../components/pages/Skills';
@@ -15,24 +15,30 @@ import Navbar from '../components/navbar/Navbar';
 export default function Home() {
   const scrollPosition = useScrollPosition();
   const [isLoading, setIsLoading] = useState(true);
+  const containerRef = useRef(null);
 
-  useEffect(() => {
-    (
-      async() => {
-        const LocomotiveScroll = (await import('locomotive-scroll')).default;
+  const options = {
+    getDirection: true,
+  };
+
+  // useEffect(() => {
+  //   (
+  //     async() => {
+  //       // const LocomotiveScroll = (await import('locomotive-scroll')).default;
+  //       // const scroll = new LocomotiveScroll({
+  //       //   ...options,
+  //       // });
+  //       setTimeout(() => {
+  //         setIsLoading(false);
+  //         document.body.style.cursor = 'default';
+  //       }, 2000);
         
-        const locomotiveScroll = new LocomotiveScroll({
-            // Customize Locomotive Scroll options here
-            resetNativeScroll: false,
-          });
-
-        setTimeout(() => {
-          setIsLoading(false);
-          document.body.style.cursor = 'default';
-        }, 2000)
-      }
-    )()
-  }, []);
+  //       if (containerRef.current) {
+  //         containerRef.current.scrollTo(0, scrollPosition);
+  //       }
+  //     }
+  //   )()
+  // }, []);
 
   let bgColor = "bg-white";
 
@@ -58,11 +64,11 @@ export default function Home() {
       <Container
         full={true}
       >
-        <AnimatePresence mode='wait'>
+        {/* <AnimatePresence mode='wait'>
           {
             isLoading && <Loader/>
           }
-        </AnimatePresence>
+        </AnimatePresence> */}
         <div className={`
             ${bgColor}
             transition 

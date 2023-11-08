@@ -1,13 +1,14 @@
 "use client"
 
 import Image from 'next/image';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Container from './components/Container';
 import { useScrollPosition } from './hooks/useScrollPosition';
 import Skills from './components/pages/Skills';
 import MyJob from './components/pages/MyJob'
 import Landing from './components/pages/landing/Landing';
 import Loader from './components/reusable/Loaders/Loader';
+import Scroller from './components/reusable/Scroller';
 import { AnimatePresence } from 'framer-motion';
 import Paragraph from './components/pages/Paragraph';
 import ProjectMain from './components/pages/projects/ProjectMain'
@@ -18,23 +19,28 @@ import { useRouter } from 'next/router';
 export default function Home() {
   const scrollPosition = useScrollPosition();
   const [isLoading, setIsLoading] = useState(true);
+  const containerRef = useRef(null);
 
-  useEffect(() => {
-    (
-      async() => {
-        const LocomotiveScroll = (await import('locomotive-scroll')).default;
-        const locomotiveScroll = new LocomotiveScroll({
-          // Customize Locomotive Scroll options here
-          resetNativeScroll: false,
-        });
+  const options = {
+    getDirection: true,
+  };
 
-        setTimeout(() => {
-          setIsLoading(false);
-          document.body.style.cursor = 'default';
-        }, 2000)
-      }
-    )()
-  }, []);
+  // useEffect(() => {
+  //   (
+  //     async() => {
+  //       const LocomotiveScroll = (await import('locomotive-scroll')).default;
+  //       const scroll = new LocomotiveScroll({
+  //         ...options,
+  //         smooth: true,
+  //       });
+  //       setTimeout(() => {
+  //         setIsLoading(false);
+  //         document.body.style.cursor = 'default';
+  //       }, 2000);
+        
+  //     }
+  //   )()
+  // }, []);
 
   let bgColor = "bg-white";
 
@@ -57,14 +63,15 @@ export default function Home() {
   return (
       <>
       <Navbar/>
+      <Scroller>
       <Container
         full={true}
       >
-        <AnimatePresence mode='wait'>
+        {/* <AnimatePresence mode='wait'>
           {
             isLoading && <Loader/>
           }
-        </AnimatePresence>
+        </AnimatePresence> */}
         <div className={`
             ${bgColor}
             transition 
@@ -85,6 +92,7 @@ export default function Home() {
           </div>
         </div>
       </Container>
+      </Scroller>
       </>
     
   )

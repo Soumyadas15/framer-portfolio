@@ -10,6 +10,11 @@ export const metadata = {
   description: 'Bhupendrs portfolio',
 }
 
+const options = {
+    getDirection: true,
+  };
+
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">

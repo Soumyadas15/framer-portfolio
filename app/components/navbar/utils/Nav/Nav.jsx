@@ -17,24 +17,11 @@ export default function Nav() {
                 const { title, href } = link;
                 return (
                     <div key={`b_${i}`} className={styles.linkContainer}>
-                        <motion.div
-                          href={href}
-                          custom={i}
-                          variants={perspective}
-                          initial="initial"
-                          animate="enter"
-                          exit="exit"
-                          onClick={() => {
-                            router.push(href);
-                            router.refresh();
-                          }}
-                        >
-                            
-                                <a className='hover:text-white transition duration-200 ease-in cursor-pointer hover:scale-105'>
-                                {title}
-                                </a>
-                            
-                        </motion.div>
+                        <Link href={href}>
+                            <motion.div custom={i} variants={perspective} initial="initial" animate="enter" exit="exit">
+                            {title}
+                            </motion.div>
+                        </Link>
                     </div>
                 )
             })
