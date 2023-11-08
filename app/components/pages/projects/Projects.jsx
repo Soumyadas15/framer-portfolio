@@ -93,9 +93,13 @@ export default function Home() {
     </div>
     
     <div className='-mt-8'>
-       <Button>
-            <p className='text-white'>More work</p>
-        </Button> 
+    <Button className='bg-[#3b3b3b]'>
+                        <div className="flex flex-col items-center space-y-[-10px]">
+                        <div className="z-10 text-[15px] group-hover:text-[20px] transition duration-1000">My</div>
+                            <div className="z-10 text-[15px] group-hover:text-[20px] transition duration-1000">Skills</div> 
+                        </div>
+                            
+                </Button>
     </div>
     
     <>

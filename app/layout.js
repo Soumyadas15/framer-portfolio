@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`
-        ${font.className}
+        font-gilroy
         no-scrollbar
       `}
       suppressHydrationWarning

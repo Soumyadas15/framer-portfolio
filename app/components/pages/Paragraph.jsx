@@ -45,7 +45,7 @@ const Paragraph = ({tag, content, black}) => {
                         </div>
                         
                     
-                        <div>
+                        <div className="font-regular">
                             {content}
                         </div>
                         

@@ -9,23 +9,23 @@ import Button from '../../reusable/Button'
 
 const translate = {
     initial: {
-        y: "100%",
-        opacity: 0
+        y: "110%",
+        opacity: 1
     },
     enter: (i) => ({
         y: 0,
         opacity: 1,
-        transition: {duration: 1, ease: [0.76, 0, 0.24, 1], delay: i + 2}
+        transition: {duration: 1, ease: [0.76, 0, 0.24, 1], delay: i + 1}
     }),
     exit: (i) => ({
         y: "100%",
-        opacity: 0,
+        opacity: 1,
         transition: {duration: 0.7, ease: [0.76, 0, 0.24, 1], delay: 0.2}
     })
 }
 const translateStatic = {
     initial: {
-        y: "100%",
+        y: "110%",
         opacity: 0
     },
     enter:{
@@ -35,7 +35,7 @@ const translateStatic = {
     },
     exit:{
         y: "100%",
-        opacity: 0,
+        opacity: 1,
         transition: {duration: 0.7, ease: [0.76, 0, 0.24, 1], delay: 0.2}
     }
 }
@@ -91,9 +91,9 @@ const Landing = ({
                 
                 <div className="flex flex-col items-center">
                     <div className="w-screen flex flex-col md:flex-row justify-between">
-                        <div className="md:ml-20 md:text-[130px] text-7xl flex items-center z-10 md:items-start flex-col">
+                        <div className="md:ml-20 md:text-[12vw] text-8xl flex items-center z-10 md:items-start flex-col">
                                 {isVisible && (
-                                    <div className="flex overflow-hidden">
+                                    <div className="flex h-auto overflow-hidden">
                                         {start.map((letter, index) => {
                                             return( 
                                                 
@@ -115,7 +115,7 @@ const Landing = ({
                                     </div>
                                 )}
                                 {isVisible && (
-                                    <div className="flex overflow-hidden h-[80px] md:h-[150px]">
+                                    <div className="flex overflow-hidden h-auto md:h-auto">
                                         {name.map((letter, index) => {
                                             return(
                                                     <TextSpan key={index}>
@@ -151,17 +151,17 @@ const Landing = ({
                             <div className="flex flex-col">
                                 <div className="md:mr-20 flex flex-col items-center mt-10 md:items-end z-10">
                                     <motion.div variants={translateStatic} initial='initial' animate='enter' exit='exit'>
-                                        <div className="overflow-hidden">
+                                        <div className="overflow-hidden font-gilroy">
                                             I am an interactive designer based
                                         </div>
                                     </motion.div>
                                     <motion.div variants={translateStatic} initial='initial' animate='enter' exit='exit'>
-                                        <div className="overflow-hidden">
+                                        <div className="overflow-hidden font-gilroy">
                                             in India. I make engaging experiences
                                         </div> 
                                     </motion.div>
                                     <motion.div variants={translateStatic} initial='initial' animate='enter' exit='exit'>
-                                        <div className="overflow-hidden">
+                                        <div className="overflow-hidden font-gilroy">
                                             for the web.
                                         </div>
                                     </motion.div>
