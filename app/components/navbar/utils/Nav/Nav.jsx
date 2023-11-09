@@ -18,8 +18,15 @@ export default function Nav() {
                 return (
                     <div key={`b_${i}`} className={styles.linkContainer}>
                         <Link href={href}>
-                            <motion.div custom={i} variants={perspective} initial="initial" animate="enter" exit="exit">
-                            {title}
+                            <motion.div 
+                                custom={i} 
+                                variants={perspective} 
+                                initial="initial" 
+                                animate="enter" 
+                                exit="exit"
+                                className='group'
+                            >
+                                <div className='group-hover:text-white group-hover:scale-105 transition duration-300'>{title}</div>
                             </motion.div>
                         </Link>
                     </div>
