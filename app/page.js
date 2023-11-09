@@ -92,9 +92,9 @@ export default function Home() {
             
             <Landing/>
             <Paragraph tag='Little bit about me' content={primary}/>
-            <Skills/>
-            <Paragraph tag='Background' content={primary}/>
             <MyJob/>
+            <Paragraph tag='Background' content={primary}/>
+            <Skills/>
             <ProjectMain/>
             <Paragraph tag='Little bit about me' content={primary}/>
           </div>
