@@ -6,8 +6,9 @@ import Navbar from "../components/navbar/Navbar";
 import Paragraph from "../components/pages/Paragraph";
 import { AnimatePresence } from "framer-motion";
 import StaticLoader from '../components/reusable/Loaders/StaticLoader'
+import ProjectMain from '../components/pages/projects/ProjectMain'
 
-const About = () => {
+const Projects = () => {
 
     const [isLoading, setIsLoading] = useState(true);
     const containerRef = useRef(null);
@@ -53,16 +54,15 @@ const About = () => {
                 <Navbar/>
                 <AnimatePresence>
                     {
-                        isLoading && <StaticLoader title='About'/>
+                        isLoading && <StaticLoader title='Projects'/>
                     }
                 </AnimatePresence>
+                <ProjectMain/>
                 
-                <Paragraph content={primary}/>
-                <Paragraph content={primary}/>
             </div>
             
         </Container>
      );
 }
  
-export default About;
+export default Projects;
