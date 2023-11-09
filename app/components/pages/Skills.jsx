@@ -53,7 +53,7 @@ const Skills = () => {
             relative
             
         `}>
-            <div className="h-[600px] w-[600px] md:h-[700px] md:w-[700px] block">
+            <div className="h-[300px] w-[300px] md:h-[700px] md:w-[700px] block">
                 <Earth/>
             </div>
             <div className="hidden md:block">

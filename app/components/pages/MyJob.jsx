@@ -45,7 +45,7 @@ const MyJob = () => {
             relative
             
         `}>
-            <div className="h-[600px] w-[600px] md:h-[700px] md:w-[700px] block">
+            <div className="h-[400px] w-[400px] md:h-[700px] md:w-[700px] block">
                 <Earth/>
             </div>
             <div className="hidden md:block">
