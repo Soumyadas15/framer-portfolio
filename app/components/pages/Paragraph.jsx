@@ -4,10 +4,13 @@ import { useScrollPosition } from "../../hooks/useScrollPosition";
 import AnimatedCursor from "react-animated-cursor"
 import Container from "../Container";
 import Button from "../reusable/Button";
+import { useRef } from "react";
+import { useInView } from "framer-motion";
 
 const Paragraph = ({tag, content, black}) => {
     const scrollPosition = useScrollPosition();
-
+    // const description = useRef(null);
+    // const isInView = useInView(description);
     return ( 
         <Container>
             <div className="flex text-start justify-center">
