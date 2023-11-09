@@ -4,6 +4,8 @@ import { useEffect, useRef, useState } from "react";
 import Container from "../components/Container";
 import Navbar from "../components/navbar/Navbar";
 import Paragraph from "../components/pages/Paragraph";
+import { AnimatePresence } from "framer-motion";
+import StaticLoader from '../components/reusable/Loaders/StaticLoader'
 
 const About = () => {
 
@@ -14,6 +16,14 @@ const About = () => {
         getDirection: true,
     };
 
+
+    useEffect(() => {
+      setTimeout(() => {
+        setIsLoading(false);
+        document.body.style.cursor = 'default';
+      }, 1500)
+    }, [])
+    
     useEffect(() => {
         let scroll;
     
@@ -26,7 +36,7 @@ const About = () => {
             });
         });
     
-        // Cleanup function, only executed after the scroll variable is defined
+        
         return () => {
             if (scroll) {
                 scroll.destroy();
@@ -40,6 +50,11 @@ const About = () => {
     return ( 
         <Container>
             <Navbar/>
+            <AnimatePresence>
+                {
+                    isLoading && <StaticLoader title='about'/>
+                }
+            </AnimatePresence>
             <Paragraph content={primary}/>
             {/* <Paragraph content={primary}/> */}
         </Container>

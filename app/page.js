@@ -25,6 +25,13 @@ export default function Home() {
   };
 
   useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+      document.body.style.cursor = 'default';
+    }, 1500)
+  }, [])
+
+  useEffect(() => {
     let scroll;
 
     // Import the Locomotive Scroll module dynamically
@@ -69,11 +76,11 @@ export default function Home() {
       <Container
         full={true}
       >
-        {/* <AnimatePresence mode='wait'>
-          {
-            isLoading && <Loader/>
-          }
-        </AnimatePresence> */}
+        <AnimatePresence mode='wait'>
+        {
+          isLoading && <Loader/>
+        }
+        </AnimatePresence>
         <div className={`
             ${bgColor}
             transition 
