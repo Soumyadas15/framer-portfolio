@@ -108,7 +108,7 @@ const Landing = ({
                 
                 <div className="flex flex-col items-center">
                     <div className="w-screen flex flex-col md:flex-row justify-between">
-                        <div className="md:ml-20 md:text-[12vw] text-8xl flex items-center z-10 md:items-start flex-col">
+                        <div className="md:ml-20 md:text-[12vw] text-7xl flex items-center z-10 md:items-start flex-col">
                                 {isVisible && (
                                     <div className="flex h-auto overflow-hidden">
                                         {start.map((letter, index) => {
@@ -144,6 +144,7 @@ const Landing = ({
                                                             animate='enter'
                                                             exit='exit'
                                                             key={index}
+                                                            
                                                         >
                                                             {letter}
                                                         </motion.div>

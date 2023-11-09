@@ -21,6 +21,7 @@ export default function RootLayout({ children }) {
       <body className={`
         font-gilroy
         no-scrollbar
+        overflow-x-none
       `}
       suppressHydrationWarning
       >
