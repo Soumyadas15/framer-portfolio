@@ -7,7 +7,6 @@ import Paragraph from "../components/pages/Paragraph";
 import { AnimatePresence } from "framer-motion";
 import StaticLoader from '../components/reusable/Loaders/StaticLoader'
 import ProjectMain from '../components/pages/projects/ProjectMain'
-import TextField from '../components/reusable/Textfield'
 import Button from '../components/reusable/Button'
 
 const Projects = () => {
@@ -49,7 +48,7 @@ const Projects = () => {
         };
     }, []);
 
-    const primary = <div className='font-regular leading-tight'>Its never "just a website". A good website must not only contain a robust and secure backend, but also an easy to use and user friencly frontend. Here are some my my works.<span className='text-[#ff2257]'> projects</span>.</div>;
+    const primary = <div className='font-regular leading-tight'>Its never just a website. A good website must not only contain a robust and secure backend, but also an easy to use and user friencly frontend. Here are some my my works.<span className='text-[#ff2257]'> projects</span>.</div>;
     const secondary = <p className='font-regular leading-tight'>The main component of my design is<span className="text-[#ff2257]"> aesthetics.</span> I try to craft the perfect balance between <span className="text-[#ff2257]">aesthetics</span> and <span className="text-[#ff2257]">user experience.</span></p>;
 
     return ( 
