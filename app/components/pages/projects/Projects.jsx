@@ -44,6 +44,24 @@ const projects = [
     src: "silencio.png",
     color: "#8C8C8C",
     href: 'https://retrogroove.vercel.app'
+  },
+  {
+    title: "Project 7",
+    src: "silencio.png",
+    color: "#8C8C8C",
+    href: 'https://retrogroove.vercel.app'
+  },
+  {
+    title: "Project 8",
+    src: "silencio.png",
+    color: "#8C8C8C",
+    href: 'https://retrogroove.vercel.app'
+  },
+  {
+    title: "Project 9",
+    src: "silencio.png",
+    color: "#8C8C8C",
+    href: 'https://retrogroove.vercel.app'
   }
 ]
 
@@ -62,7 +80,7 @@ export default function Home({ half, hideButton}) {
   const cursorLabel = useRef(null);
   const router = useRouter();
 
-  const filteredProjects = half ? projects.slice(0, 4) : projects.slice(0, 6);
+  const filteredProjects = half ? projects.slice(0, 4) : projects.slice(0, 9);
 
   let xMoveContainer = useRef(null);
   let yMoveContainer = useRef(null);
