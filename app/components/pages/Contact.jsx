@@ -17,7 +17,7 @@ const Contact = () => {
             transition
             duration-400
             ease-in
-            bg-white
+            
             
         `}>
             

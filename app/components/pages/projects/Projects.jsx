@@ -105,72 +105,87 @@ export default function Home({ half, hideButton}) {
   
 
   return (
-  <main onMouseMove={(e) => {moveItems(e.clientX, e.clientY)}} className={styles.projects}>
-    <div className='flex flex-col items-start'>
-        <div className='flex gap-4 items-center mb-[2%]'>
-            <div className='text-white opacity-60 relative pl-[10.5%] text-xs md:text-xl'>Projects</div>
-            <hr className="w-[100px] border-1 border-white opacity-60"/>
-        </div>
-        <div className={styles.body}>
-        {
-            filteredProjects.map( (project, index) => {
-              return <div onClick={() => {window.open(project.href, '_blank')}} key = {index}><Project index={index} title={project.title} manageModal={manageModal} key={index}/></div>
-            })
-        }
-        </div>
-    </div>
-    
-    <div 
-        className={`-mt-10 ${display}`}
-        onClick={() => {
-            router.push('/projects');
-            router.refresh();
-        }}
-    >
-      <div className='flex items-center justify-center  h-[80px] w-[230px]'>
-        <Button className='
-                bg-[#3b3b3b] 
-                h-[60px] 
-                w-[200px] 
-                rounded-full 
-                flex 
-                items-center 
-                justify-center 
-                hover:cursor-pointer
-           '>
-            <div className="flex flex-col items-center space-y-[-10px]">
-            <div className="z-10 text-xl group-hover:text-[20px] transition duration-1000 text-white">More work</div>
-            </div>            
-        </Button>
-      </div>
-    </div>
-    
-    <>
-        <motion.div ref={modalContainer} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"} className={`${styles.modalContainer} group`}>
-            <div style={{top: index * -100 + "%"}} className={`${styles.modalSlider} group`}>
+      <div
+          className='
+            h-screen 
+            flex 
+            items-center 
+            justify-center 
+            text-3xl 
+            text-white
+            transition
+            duration-400
+            ease-in
+          '
+      
+      >
+      <main onMouseMove={(e) => {moveItems(e.clientX, e.clientY)}} className={styles.projects}>
+        <div className='flex flex-col items-start'>
+            <div className='flex gap-4 items-center mb-[2%]'>
+                <div className='text-white opacity-60 relative pl-[10.5%] text-xs md:text-xl'>Projects</div>
+                <hr className="w-[100px] border-1 border-white opacity-60"/>
+            </div>
+            <div className={styles.body}>
             {
                 filteredProjects.map( (project, index) => {
-                const { src, color } = project
-                return <div 
-                          className={styles.modal} 
-                          style={{backgroundColor: color}} 
-                          key={`modal_${index}`} 
-                          
-                        >
-                          <Image 
-                          src={`/images/1.png`}
-                          width={300}
-                          height={0}
-                          alt="image"
-                          />
-                </div>
+                  return <div onClick={() => {window.open(project.href, '_blank')}} key = {index}><Project index={index} title={project.title} manageModal={manageModal} key={index}/></div>
                 })
             }
             </div>
-        </motion.div>
-        <motion.div ref={cursor} className={styles.cursor} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"}></motion.div>
-        <motion.div ref={cursorLabel} className={styles.cursorLabel} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"}>View</motion.div>
-    </>
-  </main>
+        </div>
+        
+        <div 
+            className={`-mt-10 ${display}`}
+            onClick={() => {
+                router.push('/projects');
+                router.refresh();
+            }}
+        >
+          <div className='flex items-center justify-center  h-[80px] w-[230px]'>
+            <Button className='
+                    bg-[#3b3b3b] 
+                    h-[60px] 
+                    w-[200px] 
+                    rounded-full 
+                    flex 
+                    items-center 
+                    justify-center 
+                    hover:cursor-pointer
+              '>
+                <div className="flex flex-col items-center space-y-[-10px]">
+                <div className="z-10 text-xl group-hover:text-[20px] transition duration-1000 text-white">More work</div>
+                </div>            
+            </Button>
+          </div>
+        </div>
+        
+        <>
+            <motion.div ref={modalContainer} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"} className={`${styles.modalContainer} group`}>
+                <div style={{top: index * -100 + "%"}} className={`${styles.modalSlider} group`}>
+                {
+                    filteredProjects.map( (project, index) => {
+                    const { src, color } = project
+                    return <div 
+                              className={styles.modal} 
+                              style={{backgroundColor: color}} 
+                              key={`modal_${index}`} 
+                              
+                            >
+                              <Image 
+                              src={`/images/1.png`}
+                              width={300}
+                              height={0}
+                              alt="image"
+                              />
+                    </div>
+                    })
+                }
+                </div>
+            </motion.div>
+            <motion.div ref={cursor} className={styles.cursor} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"}></motion.div>
+            <motion.div ref={cursorLabel} className={styles.cursorLabel} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"}>View</motion.div>
+        </>
+      </main>
+      </div>
   )
 }

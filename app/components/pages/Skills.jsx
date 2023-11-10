@@ -41,16 +41,15 @@ const Skills = () => {
 
     return ( 
         <div className = {`
-            h-[80%]
-            md:h-screen
+            h-screen 
             flex 
             items-center 
             justify-center 
             text-3xl 
+            text-white
             transition
             duration-400
             ease-in
-            relative
             
             
         `}>

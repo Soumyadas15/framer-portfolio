@@ -13,9 +13,19 @@ const Paragraph = ({tag, content, black}) => {
     // const isInView = useInView(description);
     return ( 
         <Container>
-            <div className="flex text-start justify-center">
+            <div className={`
+                    h-screen 
+                    flex 
+                    items-center 
+                    justify-center 
+                    text-3xl 
+                    text-white
+                    transition
+                    duration-400
+                    ease-in
+                    ${black ? 'text-black' : 'text-white'}
+                `}>
                 <div className = {`
-                    h-[80%]
                     md:h-screen
                     text-3xl
                     md:text-6xl
