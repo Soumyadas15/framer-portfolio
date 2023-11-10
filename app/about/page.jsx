@@ -48,20 +48,36 @@ const About = () => {
     const secondary = <p className='font-regular leading-tight'>The main component of my design is<span className="text-[#ff2257]"> aesthetics.</span> I try to craft the perfect balance between <span className="text-[#ff2257]">aesthetics</span> and <span className="text-[#ff2257]">user experience.</span></p>;
 
     return ( 
-        <Container>
-            <div className="bg-black h-screen">
-                <Navbar/>
-                <AnimatePresence>
-                    {
-                        isLoading && <StaticLoader title='About'/>
-                    }
-                </AnimatePresence>
+        <>
+        <Navbar/>
+        <Container full={true}>
+            <div className="
+                        bg-black 
+                        h-full
+                        flex
+                        justify-center
+                ">
+                    <div className={`
+                        bg-black 
+                        transition 
+                        duration-300
+
+                    `}>
+                    <div className='flex h-full flex-col'>
+                        
+                        
+                        <Paragraph tag='Little bit about me' content={primary}/>
+                        
+                        <Paragraph tag='Background' content={primary}/>
+                        
+                        <Paragraph tag='Little bit about me' content={primary}/>
+                    </div>
+                    </div>
                 
-                <Paragraph content={primary}/>
-                <Paragraph content={primary}/>
             </div>
             
         </Container>
+        </>
      );
 }
  

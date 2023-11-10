@@ -35,6 +35,7 @@ const Paragraph = ({tag, content, black}) => {
                                     md:text-xl 
                                     opacity-60 
                                     font-light
+                                    
                                     ${black ? 'text-black' : 'text-white'}
                             `}>
                                 {tag}
@@ -48,7 +49,7 @@ const Paragraph = ({tag, content, black}) => {
                         </div>
                         
                     
-                        <div className="font-regular">
+                        <div className="font-regular ">
                             {content}
                         </div>
                         

@@ -52,6 +52,7 @@ const Skills = () => {
             ease-in
             relative
             
+            
         `}>
             <div className="h-[300px] w-[300px] md:h-[700px] md:w-[700px] block">
                 <Earth/>

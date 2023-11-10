@@ -122,7 +122,7 @@ const Landing = ({
                                                             animate='enter'
                                                             exit='exit'
                                                             key={index}
-                                                            className="font-light"
+                                                            className="font-light "
                                                         >
                                                             {letter}
                                                         </motion.div>
@@ -144,6 +144,7 @@ const Landing = ({
                                                             animate='enter'
                                                             exit='exit'
                                                             key={index}
+                                                            className=""
                                                             
                                                         >
                                                             {letter}
@@ -191,17 +192,17 @@ const Landing = ({
                             <div className="flex flex-col">
                                 <div className="md:mr-20 flex flex-col items-center mt-10 md:items-end z-10">
                                     <motion.div variants={translateStatic} initial='initial' animate='enter' exit='exit'>
-                                        <div className="overflow-hidden font-gilroy">
+                                        <div className="overflow-hidden ">
                                             I am an interactive designer based
                                         </div>
                                     </motion.div>
                                     <motion.div variants={translateStatic} initial='initial' animate='enter' exit='exit'>
-                                        <div className="overflow-hidden font-gilroy">
+                                        <div className="overflow-hidden ">
                                             in India. I make engaging experiences
                                         </div> 
                                     </motion.div>
                                     <motion.div variants={translateStatic} initial='initial' animate='enter' exit='exit'>
-                                        <div className="overflow-hidden font-gilroy">
+                                        <div className="overflow-hidden ">
                                             for the web.
                                         </div>
                                     </motion.div>
@@ -223,7 +224,7 @@ const Landing = ({
                             <motion.div variants={translateStatic} initial='initial' animate='enter' exit='exit'>
                                 <div className="flex items-center gap-4">
                                 <hr className="w-[100px] border-1 border-black"/>
-                                    <div className="text-xs md:text-md">
+                                    <div className="text-xs md:text-md ">
                                         Created by Bhupendr @ 2023
                                     </div> 
                                 </div>

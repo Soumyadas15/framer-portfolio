@@ -50,7 +50,7 @@ const Navbar = () => {
                             md:gap-0
                         "
                     >
-                        <div className={`text-xl text-[#ff2257] font-semibold transition duration-200 ease-in ml-10 mt-6 ${opacity}`}>
+                        <div className={`text-xl text-[#ff2257] font-semibold transition duration-200 ease-in ml-10 mt-6 ${opacity} `}>
                             
                             Bhupendr
                         </div>

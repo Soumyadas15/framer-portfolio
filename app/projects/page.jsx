@@ -22,7 +22,7 @@ const Projects = () => {
       setTimeout(() => {
         setIsLoading(false);
         document.body.style.cursor = 'default';
-      }, 1500)
+      }, 1000)
     }, [])
     
     useEffect(() => {
@@ -50,7 +50,7 @@ const Projects = () => {
 
     return ( 
         <Container>
-            <div className="bg-black h-screen">
+            <div className="bg-black h-full flex flex-col justify-center items-center">
                 <Navbar/>
                 <AnimatePresence>
                     {

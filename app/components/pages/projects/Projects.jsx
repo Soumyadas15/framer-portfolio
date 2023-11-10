@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import gsap from 'gsap';
 import Image from 'next/image';
 import Button from '../../reusable/Button';
+import { useRouter } from 'next/navigation';
 
 const projects = [
   {
@@ -43,6 +44,7 @@ export default function Home() {
   const modalContainer = useRef(null);
   const cursor = useRef(null);
   const cursorLabel = useRef(null);
+  const router = useRouter();
 
   let xMoveContainer = useRef(null);
   let yMoveContainer = useRef(null);
@@ -92,7 +94,13 @@ export default function Home() {
         </div>
     </div>
     
-    <div className='-mt-10'>
+    <div 
+        className='-mt-10' 
+        onClick={() => {
+            router.push('/projects');
+            router.refresh();
+        }}
+    >
       <div className='flex items-center justify-center  h-[80px] w-[230px]'>
         <Button className='
                 bg-[#3b3b3b] 
@@ -109,7 +117,6 @@ export default function Home() {
             </div>            
         </Button>
       </div>
-      
     </div>
     
     <>
