@@ -95,7 +95,7 @@ export default function Home() {
             <MyJob/>
             <Paragraph tag='Background' content={primary}/>
             <Skills/>
-            <ProjectMain/>
+            <ProjectMain half={true} hideButton={false}/>
             <Paragraph tag='Little bit about me' content={primary}/>
           </div>
         </div>

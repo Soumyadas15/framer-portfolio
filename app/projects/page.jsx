@@ -57,7 +57,7 @@ const Projects = () => {
                         isLoading && <StaticLoader title='Projects'/>
                     }
                 </AnimatePresence>
-                <ProjectMain/>
+                <ProjectMain half={false} hideButton={true}/>
                 
             </div>
             

@@ -28,6 +28,16 @@ const projects = [
     title: "Project 4",
     src: "silencio.png",
     color: "#706D63"
+  },
+  {
+    title: "Project 5",
+    src: "silencio.png",
+    color: "#EFE8D3"
+  },
+  {
+    title: "Project 6",
+    src: "silencio.png",
+    color: "#8C8C8C"
   }
 ]
 
@@ -37,7 +47,7 @@ const scaleAnimation = {
     closed: {scale: 0, x:"-50%", y:"-50%", transition: {duration: 0.4, ease: [0.32, 0, 0.67, 0]}}
 }
 
-export default function Home() {
+export default function Home({ half, hideButton}) {
 
   const [modal, setModal] = useState({active: false, index: 0})
   const { active, index } = modal;
@@ -45,6 +55,8 @@ export default function Home() {
   const cursor = useRef(null);
   const cursorLabel = useRef(null);
   const router = useRouter();
+
+  const filteredProjects = half ? projects.slice(0, 4) : projects.slice(0, 6);
 
   let xMoveContainer = useRef(null);
   let yMoveContainer = useRef(null);
@@ -78,6 +90,10 @@ export default function Home() {
     setModal({active, index})
   }
 
+  const text = hideButton ? 'haha' : 'sed';
+  const display = hideButton ? 'hidden' : 'block'
+  
+
   return (
   <main onMouseMove={(e) => {moveItems(e.clientX, e.clientY)}} className={styles.projects}>
     <div className='flex flex-col items-start'>
@@ -87,15 +103,15 @@ export default function Home() {
         </div>
         <div className={styles.body}>
         {
-            projects.map( (project, index) => {
-            return <Project index={index} title={project.title} manageModal={manageModal} key={index}/>
+            filteredProjects.map( (project, index) => {
+              return <Project index={index} title={project.title} manageModal={manageModal} key={index}/>
             })
         }
         </div>
     </div>
     
     <div 
-        className='-mt-10' 
+        className={`-mt-10 ${display}`}
         onClick={() => {
             router.push('/projects');
             router.refresh();

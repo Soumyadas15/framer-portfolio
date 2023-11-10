@@ -60,7 +60,7 @@ const About = () => {
                 ">
                     <AnimatePresence>
                     {
-                        isLoading && <StaticLoader title='Projects'/>
+                        isLoading && <StaticLoader title='About'/>
                     }
                     </AnimatePresence>
                     <div className={`

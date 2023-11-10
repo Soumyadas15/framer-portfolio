@@ -4,7 +4,7 @@ import Projects from './Projects'
 import MobileProjects from './mobile/MobileProjects';
 
 
-const ProjectMain = () => {
+const ProjectMain = ({ half, hideButton }) => {
 
     return ( 
         
@@ -26,7 +26,7 @@ const ProjectMain = () => {
                 <MobileProjects/>
             </div>
             <div className='hidden md:block'>
-                <Projects/>
+                <Projects half={half} hideButton={hideButton}/>
             </div>
             
         </div>
