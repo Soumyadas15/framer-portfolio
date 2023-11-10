@@ -21,7 +21,7 @@ const About = () => {
       setTimeout(() => {
         setIsLoading(false);
         document.body.style.cursor = 'default';
-      }, 1500)
+      }, 1000)
     }, [])
     
     useEffect(() => {
@@ -49,14 +49,19 @@ const About = () => {
 
     return ( 
         <>
-        <Navbar/>
         <Container full={true}>
+            <Navbar/>
             <div className="
                         bg-black 
                         h-full
                         flex
                         justify-center
                 ">
+                    <AnimatePresence>
+                    {
+                        isLoading && <StaticLoader title='Projects'/>
+                    }
+                    </AnimatePresence>
                     <div className={`
                         bg-black 
                         transition 
