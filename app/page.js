@@ -72,6 +72,7 @@ export default function Home() {
   
   return (
       <>
+      <div className='font-gilroy'>
       <Navbar/>
       {/* <Scroller> */}
       <Container
@@ -86,7 +87,7 @@ export default function Home() {
             ${bgColor}
             transition 
             duration-300
-            font-gilroy
+            
         `}>
           <div className='flex h-full flex-col'>
             
@@ -100,8 +101,8 @@ export default function Home() {
           </div>
         </div>
       </Container>
+      </div>
       {/* </Scroller> */}
       </>
-    
   )
 }
