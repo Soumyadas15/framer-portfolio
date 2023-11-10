@@ -49,6 +49,7 @@ const About = () => {
 
     return ( 
         <>
+        <div className="font-gilroy">
         <Container full={true}>
             <Navbar/>
             <div className="
@@ -56,7 +57,7 @@ const About = () => {
                         h-full
                         flex
                         justify-center
-                        font-gilroy
+                        
                 ">
                     <AnimatePresence>
                     {
@@ -83,6 +84,7 @@ const About = () => {
             </div>
             
         </Container>
+        </div>
         </>
      );
 }
