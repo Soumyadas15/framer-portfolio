@@ -7,7 +7,7 @@ import styles from './page.module.scss';
 
 const Loader = () => {
     const [index, setIndex] = useState(0);
-    const words = ["Hello", "Namaste", "Guten teg" , "bonjour", "Ciao", "Guten teg", "Hello"];
+    const words = ["Hello", "Namaste", "Guten teg" , "Bonjour", "Ciao", "Guten teg", "Hello"];
     const [dimension, setDimension] = useState({width: 0, height:0});
 
     useEffect( () => {
