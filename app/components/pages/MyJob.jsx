@@ -79,7 +79,7 @@ const MyJob = () => {
                 </Button>
             </div>
             
-            <Skillset data={data}/>
+            <Skillset data={data} heading='Stuff I do'/>
         </div>
      );
 }

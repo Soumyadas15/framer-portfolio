@@ -2,11 +2,11 @@ import React, { useRef } from 'react'
 import styles from './style.module.scss';
 import { useScroll, motion, useTransform, useMotionTemplate } from 'framer-motion';
 
-export default function index({data, setSelectedProject}) {
+export default function index({heading, data, setSelectedProject}) {
   return (
     <div className={styles.titles}>
         <div className='flex gap-4 items-center mb-[2%]'>
-            <div className='text-white opacity-60 relative pl-[10.5%] text-xs md:text-xl'>Skills I have</div>
+            <div className='text-white opacity-60 relative pl-[10.5%] text-xs md:text-xl'>{heading}</div>
             <hr className="w-[100px] border-1 border-white opacity-60"/>
         </div>
         

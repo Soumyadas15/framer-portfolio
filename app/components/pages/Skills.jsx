@@ -1,26 +1,23 @@
 'use client'
 
 import { useScrollPosition } from "../../hooks/useScrollPosition";
-import AnimatedCursor from "react-animated-cursor"
-import { useScroll } from "framer-motion";
 import dynamic from 'next/dynamic';
 import Skillset from '../skils'
 import Button from '../reusable/Button'
-import styles from './style.module.scss';
 
 const data = [
     {
-        title: "Reactjs",
+        title: "ReactJS",
         description: "",
         speed: 0.5
     },
     {
-        title: "Nodejs",
+        title: "NODEJS",
         description: "",
         speed: 0.67
     },
     {
-        title: "Python",
+        title: "PYTHON",
         description: "",
         speed: 0.8
     },
@@ -41,19 +38,19 @@ const Skills = () => {
 
     return ( 
         <div className = {`
-            h-screen 
+            h-[80%]
+            md:h-screen
             flex 
             items-center 
             justify-center 
             text-3xl 
-            text-white
             transition
             duration-400
             ease-in
-            
+            relative
             
         `}>
-            <div className="h-[300px] w-[300px] md:h-[700px] md:w-[700px] block">
+            <div className="h-[400px] w-[400px] md:h-[700px] md:w-[700px] block">
                 <Earth/>
             </div>
             <div className="hidden md:block">
@@ -87,7 +84,7 @@ const Skills = () => {
                 </Button>
             </div>
             
-            <Skillset data={data}/>
+            <Skillset data={data} heading='Skills I have'/>
         </div>
      );
 }
