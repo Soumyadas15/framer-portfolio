@@ -50,7 +50,7 @@ const Projects = () => {
 
     return ( 
         <Container>
-            <div className="bg-black h-full flex flex-col justify-center items-center">
+            <div className="bg-black h-full flex flex-col justify-center items-center font-gilroy">
                 <Navbar/>
                 <AnimatePresence>
                     {

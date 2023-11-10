@@ -56,6 +56,7 @@ const About = () => {
                         h-full
                         flex
                         justify-center
+                        font-gilroy
                 ">
                     <AnimatePresence>
                     {

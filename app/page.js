@@ -86,7 +86,7 @@ export default function Home() {
             ${bgColor}
             transition 
             duration-300
-
+            font-gilroy
         `}>
           <div className='flex h-full flex-col'>
             
