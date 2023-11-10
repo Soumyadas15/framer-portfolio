@@ -1,19 +1,30 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react';
 
 export const useScrollPosition = () => {
-  const [scrollPosition, setScrollPosition] = useState(0)
+  const [scrollPercentage, setScrollPercentage] = useState(0);
+
+  const calculateScrollPercentage = () => {
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight - windowHeight;
+    const scrolled = window.scrollY;
+
+    const percentage = (scrolled / documentHeight) * 100;
+
+    setScrollPercentage(percentage);
+  };
 
   useEffect(() => {
-    const updatePosition = () => {
-      setScrollPosition(window.pageYOffset)
-    }
+    const handleScroll = () => {
+      calculateScrollPercentage();
+    };
 
-    window.addEventListener('scroll', updatePosition)
+    window.addEventListener('scroll', handleScroll);
 
-    updatePosition()
+    // Initial calculation
+    calculateScrollPercentage();
 
-    return () => window.removeEventListener('scroll', updatePosition)
-  }, [])
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-  return scrollPosition
-}
+  return scrollPercentage;
+};

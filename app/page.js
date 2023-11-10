@@ -16,14 +16,25 @@ import MobileProjects from './components/pages/projects/mobile/MobileProjects'
 import Navbar from './components/navbar/Navbar';
 import { useRouter } from 'next/router';
 
+
 export default function Home() {
   const scrollPosition = useScrollPosition();
   const [isLoading, setIsLoading] = useState(true);
+  const [bgColor, setBgColor] = useState("bg-white");
   const containerRef = useRef(null);
 
   const options = {
     getDirection: true,
   };
+
+  useEffect(() => {
+
+      if (scrollPosition >= 10 && scrollPosition < 90) {
+        setBgColor("bg-black");
+      } else {
+        setBgColor("bg-white");
+      }
+  }, [scrollPosition, containerRef.current]);
 
   useEffect(() => {
     setTimeout(() => {
@@ -51,15 +62,6 @@ export default function Home() {
         }
     };
 }, []);
-
-  let bgColor = "bg-white";
-
-  if (scrollPosition >= 500 && scrollPosition < 5000) {
-    bgColor = "bg-black";
-  } 
-  else if (scrollPosition >= 5000 && scrollPosition < 8000) {
-    bgColor = "bg-white";
-  }
 
   
   const primary = <p className='font-regular leading-tight'>The main component of my design is<span className="text-[#ff2257]"> aesthetics.</span> I try to craft the perfect balance between <span className="text-[#ff2257]">aesthetics</span> and <span className="text-[#ff2257]">user experience.</span></p>;
