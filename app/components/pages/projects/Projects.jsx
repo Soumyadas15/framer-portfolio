@@ -114,7 +114,7 @@ export default function Home({ half, hideButton}) {
         <div className={styles.body}>
         {
             filteredProjects.map( (project, index) => {
-              return <div onClick={() => {window.open(project.href, '_blank')}}><Project index={index} title={project.title} manageModal={manageModal} key={index}/></div>
+              return <div onClick={() => {window.open(project.href, '_blank')}} key = {index}><Project index={index} title={project.title} manageModal={manageModal} key={index}/></div>
             })
         }
         </div>
