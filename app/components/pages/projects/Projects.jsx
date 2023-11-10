@@ -12,32 +12,38 @@ const projects = [
   {
     title: "Project 1",
     src: "c2montreal.png",
-    color: "#ffca36"
+    color: "#ffca36",
+    href: 'https://retrogroove.vercel.app'
   },
   {
     title: "Project 2",
     src: "officestudio.png",
-    color: "#8C8C8C"
+    color: "#8C8C8C",
+    href: 'https://retrogroove.vercel.app'
   },
   {
     title: "Project 3",
     src: "locomotive.png",
-    color: "#EFE8D3"
+    color: "#EFE8D3",
+    href: 'https://retrogroove.vercel.app'
   },
   {
     title: "Project 4",
     src: "silencio.png",
-    color: "#706D63"
+    color: "#706D63",
+    href: 'https://retrogroove.vercel.app'
   },
   {
     title: "Project 5",
     src: "silencio.png",
-    color: "#EFE8D3"
+    color: "#EFE8D3",
+    href: 'https://retrogroove.vercel.app'
   },
   {
     title: "Project 6",
     src: "silencio.png",
-    color: "#8C8C8C"
+    color: "#8C8C8C",
+    href: 'https://retrogroove.vercel.app'
   }
 ]
 
@@ -90,6 +96,10 @@ export default function Home({ half, hideButton}) {
     setModal({active, index})
   }
 
+  const handleClick = () => {
+    window.open(href, '_blank');
+  };
+
   const text = hideButton ? 'haha' : 'sed';
   const display = hideButton ? 'hidden' : 'block'
   
@@ -104,7 +114,7 @@ export default function Home({ half, hideButton}) {
         <div className={styles.body}>
         {
             filteredProjects.map( (project, index) => {
-              return <Project index={index} title={project.title} manageModal={manageModal} key={index}/>
+              return <div onClick={() => {window.open(project.href, '_blank')}}><Project index={index} title={project.title} manageModal={manageModal} key={index}/></div>
             })
         }
         </div>
@@ -136,18 +146,23 @@ export default function Home({ half, hideButton}) {
     </div>
     
     <>
-        <motion.div ref={modalContainer} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"} className={styles.modalContainer}>
-            <div style={{top: index * -100 + "%"}} className={styles.modalSlider}>
+        <motion.div ref={modalContainer} variants={scaleAnimation} initial="initial" animate={active ? "enter" : "closed"} className={`${styles.modalContainer} group`}>
+            <div style={{top: index * -100 + "%"}} className={`${styles.modalSlider} group`}>
             {
-                projects.map( (project, index) => {
+                filteredProjects.map( (project, index) => {
                 const { src, color } = project
-                return <div className={styles.modal} style={{backgroundColor: color}} key={`modal_${index}`}>
-                    <Image 
-                    src={`/images/${index + 1}.jpg`}
-                    width={300}
-                    height={0}
-                    alt="image"
-                    />
+                return <div 
+                          className={styles.modal} 
+                          style={{backgroundColor: color}} 
+                          key={`modal_${index}`} 
+                          
+                        >
+                          <Image 
+                          src={`/images/1.png`}
+                          width={300}
+                          height={0}
+                          alt="image"
+                          />
                 </div>
                 })
             }
