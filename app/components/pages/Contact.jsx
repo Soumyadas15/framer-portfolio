@@ -65,7 +65,7 @@ const Contact = () => {
                                         Have an <span className="text-[#ff2257]">idea</span>?
                                     </div>
                                     <div className="font-regular ">
-                                        I\'d be happy to <span className="text-[#ff2257]">help out</span>.
+                                        I&apos;d be happy to <span className="text-[#ff2257]">help out</span>.
                                     </div>
                                 </div>
                                 <div className="w-full flex items-center -mt-[3%]">
