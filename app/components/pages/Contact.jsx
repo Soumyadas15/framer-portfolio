@@ -12,7 +12,7 @@ const Contact = () => {
 
     return ( 
         <Container>
-            <div className="w-[80vw] flex flex-col overflow-x-hidden">
+            <div className="w-[80vw] flex flex-col">
                     <div className={`
                             h-screen 
                             flex 
@@ -68,30 +68,8 @@ const Contact = () => {
                                         I&apos;d be happy to <span className="text-[#ff2257]">help out</span>.
                                     </div>
                                 </div>
-                                <div className="w-full flex items-center -mt-[3%]">
-                                    <hr className="w-[60vw] border-1 border-black"/>
-                                    <div className='flex items-center justify-start  h-[10vw] w-[65vw] '>
-                                        <Button className='
-                                                relative
-                                                bg-transparent
-                                                border-[1.5px]
-                                                bg-neutral-300
-                                                h-[5vw] 
-                                                w-[20vw] 
-                                                rounded-full 
-                                                flex 
-                                                items-center 
-                                                justify-center 
-                                                hover:cursor-pointer
-                                                overflow-hidden
-                                        '>
-                                            <div className="flex flex-col items-center space-y-[-10px]">
-                                            <div className="z-10 text-xl group-hover:text-[20px] transition duration-1000 text-black">Contact</div>
-                                            </div>            
-                                        </Button>
-                                    </div>
-                                </div>
-                                <div className='flex items-center justify-between -mt-[3%] h-[10vw] w-[80vw]'>
+                                
+                                <div className='flex items-center justify-between mt-[4%] h-[10vw] w-[80vw]'>
                                     <div>
                                         <Button className='
                                                 relative
