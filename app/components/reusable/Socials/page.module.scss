@@ -1,0 +1,24 @@
+.main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+    .container{
+        display: flex;
+        gap: 0.5rem;
+        svg{
+            height: 50px;
+            padding: 10px;
+            fill: rgb(156, 156, 156);
+            transition: fill 0.2s;
+            cursor: pointer;
+            &:hover{
+                fill: #ff2257;
+            }
+        }
+    }
+    p{
+        color: black;
+    }
+}

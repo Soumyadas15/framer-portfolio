@@ -23,6 +23,7 @@ const Paragraph = ({tag, content, black}) => {
                     transition
                     duration-400
                     ease-in
+                    
                     ${black ? 'text-black' : 'text-white'}
                 `}>
                 <div className = {`

@@ -122,6 +122,7 @@ const Projects = () => {
                             </div>
                             <div className='flex items-center justify-center  h-[10vw] w-[65vw]'>
                                 <Button className='
+                                        relative
                                         bg-transparent
                                         border-[1.5px]
                                         border-neutral-500
@@ -132,6 +133,7 @@ const Projects = () => {
                                         items-center 
                                         justify-center 
                                         hover:cursor-pointer
+                                        overflow-hidden
                                 '>
                                     <div className="flex flex-col items-center space-y-[-10px]">
                                     <div className="z-10 text-xl group-hover:text-[20px] transition duration-1000 text-white">Github</div>

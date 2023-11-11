@@ -1,0 +1,32 @@
+.line{
+    height: 1px;
+    margin-bottom: 20px;
+    width: 100%;
+    position: relative;
+}
+  
+  .line svg{
+    width: 100%;
+    
+    position: absolute;
+    
+  }
+  
+  .line svg path{
+    stroke: black;
+    stroke-width: 3px;
+    fill: none;
+  }
+  
+  .line .box{
+    height: 40px;
+    width: 100%;
+    position: relative;
+    top: -20px;
+    z-index: 1;
+  }
+  
+  .line .box:hover{
+    
+    top: -250px;
+  }
