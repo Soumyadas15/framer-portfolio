@@ -1,19 +1,55 @@
-'use client'
+"use client"
 
-import { useScrollPosition } from "../../hooks/useScrollPosition";
-import AnimatedCursor from "react-animated-cursor"
-import Container from "../Container";
-import SocialIcons from '../reusable/Socials/SocialIcons'
-import Curve from '../reusable/Curve/Curve'
-import Button from '../reusable/Button'
-import { useRouter } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
+import Container from "../../components/Container";
+import Navbar from '../../components/navbar/Navbar'
+import Button from '../../components/reusable/Button'
 
-const Contact = () => {
-    const scrollPosition = useScrollPosition();
-    const router = useRouter();
+const LayoutPage = () => {
+
+    const [isLoading, setIsLoading] = useState(true);
+    const containerRef = useRef(null);
+
+    const options = {
+        getDirection: true,
+    };
+
+    
+
+
+    useEffect(() => {
+      setTimeout(() => {
+        setIsLoading(false);
+        document.body.style.cursor = 'default';
+      }, 1000)
+    }, [])
+    
+    useEffect(() => {
+        let scroll;
+    
+        // Import the Locomotive Scroll module dynamically
+        import("locomotive-scroll").then((locomotiveModule) => {
+            scroll = new locomotiveModule.default({
+                smooth: true,
+                smoothMobile: false,
+                resetNativeScroll: true
+            });
+        });
+    
+        
+        return () => {
+            if (scroll) {
+                scroll.destroy();
+            }
+        };
+    }, []);
+
+    const primary = <div className='font-regular leading-tight'>Its never just a website. A good website must not only contain a robust and secure backend, but also an easy to use and user friencly frontend. Here are some my my works.<span className='text-[#ff2257]'> projects</span>.</div>;
+    const secondary = <p className='font-regular leading-tight'>The main component of my design is<span className="text-[#ff2257]"> aesthetics.</span> I try to craft the perfect balance between <span className="text-[#ff2257]">aesthetics</span> and <span className="text-[#ff2257]">user experience.</span></p>;
 
     return ( 
         <Container>
+            <Navbar/>
             <div className="w-[80vw] flex flex-col">
                     <div className={`
                             h-screen 
@@ -40,7 +76,7 @@ const Contact = () => {
                             flex-col
                             items-start
                             justify-center
-                            text-black
+                            text-white
                             
                             
                         `}>
@@ -71,7 +107,7 @@ const Contact = () => {
                                     </div>
                                 </div>
                                 
-                                <div className='flex items-center justify-between mt-[4%] h-[10vw] w-[80vw]' onClick={() => {router.push('/contact')}}>
+                                <div className='flex items-center justify-between mt-[4%] h-[10vw] w-[80vw]'>
                                     <div>
                                         <Button className='
                                                 relative
@@ -92,12 +128,6 @@ const Contact = () => {
                                             </div>            
                                         </Button>
                                     </div>
-                                    <div className="flex items-center justify-center p-6">
-                                        <div className="text-xl">
-                                            <SocialIcons/>
-                                        </div>
-                                    </div>
-                                    
                                     
                                 </div>
                         </div>
@@ -106,8 +136,7 @@ const Contact = () => {
                     
             </div>
         </Container>
-        
      );
 }
  
-export default Contact;
+export default LayoutPage;
