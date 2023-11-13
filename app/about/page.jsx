@@ -6,6 +6,7 @@ import Navbar from "../components/navbar/Navbar";
 import Paragraph from "../components/pages/Paragraph";
 import { AnimatePresence } from "framer-motion";
 import StaticLoader from '../components/reusable/Loaders/StaticLoader'
+import Timeline from '../components/reusable/Timeline/Timeline'
 
 const About = () => {
 
@@ -75,7 +76,8 @@ const About = () => {
                         
                         <Paragraph tag='Little bit about me' content={primary}/>
                         
-                        <Paragraph tag='Background' content={primary}/>
+                        {/* <Paragraph tag='Background' content={primary}/> */}
+                        <Timeline/>
                         
                         <Paragraph tag='Little bit about me' content={primary}/>
                     </div>
